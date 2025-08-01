@@ -1,17 +1,19 @@
 @use "sass:color";
 
-
 // variables
 $color-bg: #fafafa;
-$color-text: black;
+$color-text: #000;
 $color-white: #fff;
 $color-blue: #456bc4;
 $color-gray: #ecf0f9;
 $color-light-blue: #ecf0f9;
-$color-orange: #fff7ed;
 $color-green: #f0fcf4;
 $color-light-gray: #f0f2f7;
+
 $color-bg-gray: #edf0f5;
+$color-bg-light-blue: #eff6ff;
+$color-bg-orange: #fef7ed;
+$color-bg-green: #f0fdf4;
 
 // mixins
 @mixin desktop {
@@ -25,6 +27,7 @@ section {
 
     .section-title {
         text-align: center;
+        margin-top: 0;
     }
 }
 
@@ -81,6 +84,7 @@ section#offering {
     .offers {
         .offer {
             ul {
+                padding-left: 16px;
                 li {
                     &::marker {
                         color: $color-blue;
@@ -104,6 +108,7 @@ section#offering {
             text-align: center;
             padding: 20px 50px;
             border: 2px solid $color-gray;
+            background-color: $color-white;
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -170,6 +175,46 @@ section#project-cycle {
 
             ul {
                 padding-inline-start: 16px;
+                // list-style-image: url('./icons/achievement.png');
+                list-style-type: none;
+                padding: 0;
+
+                li {
+                    position: relative;
+                    padding-left: 24px;
+                    margin-bottom: 8px;
+
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        position: absolute;
+                        left: 0;
+                        top: 2px;
+                        width: 12px;
+                        height: 12px;
+                        background-image: url("./icons/achievement.png");
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+
+            &:nth-child(1) {
+                background-color: $color-bg-light-blue;
+                border: 1px solid
+                    color.adjust($color-bg-light-blue, $lightness: -10%);
+            }
+
+            &:nth-child(2) {
+                background-color: $color-bg-orange;
+                border: 1px solid
+                    color.adjust($color-bg-orange, $lightness: -10%);
+            }
+
+            &:nth-child(3) {
+                background-color: $color-bg-green;
+                border: 1px solid
+                    color.adjust($color-bg-green, $lightness: -10%);
             }
         }
     }
@@ -177,14 +222,26 @@ section#project-cycle {
     a {
         display: flex;
         align-content: center;
+        text-decoration: none;
+        color: $color-blue;
+        border: 1px solid $color-blue;
+        padding: 5px 20px;
+        border-radius: 15px;
+    }
+
+    &>p {
+        text-align: center;
     }
 }
 
 section#team {
     justify-items: anchor-center;
+    // h2 {
+    //     margin-top: 0;
+    // }
     .box {
         padding: 10px 30px;
-        border: 1px solid $color-gray;
+        border: 1px solid color.adjust($color-light-gray, $lightness: -10%);
         border-radius: 8px;
         background-color: $color-light-gray;
         justify-items: center;
@@ -216,6 +273,8 @@ section#contact {
                 &:last-child {
                     box-shadow: none;
                     background-color: $color-bg-gray;
+                    border: 1px solid
+                        color.adjust($color-bg-gray, $lightness: -10%);
                 }
 
                 .data {
@@ -238,6 +297,15 @@ section#contact {
         }
 
         form.form {
+            background-color: $color-white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            padding: 24px;
+            border-radius: 8px;
+
+            h3 {
+                margin-top: 0;
+            }
+
             .input-group {
                 display: flex;
                 flex-direction: column;
@@ -249,7 +317,8 @@ section#contact {
 
                 label {
                     margin-bottom: 8px;
-                    &::after {
+
+                    &.required::after {
                         content: " *";
                         color: red;
                     }
@@ -260,6 +329,7 @@ section#contact {
                     padding: 10px;
                     border-radius: 6px;
                     border: 1px solid $color-gray;
+                    background-color: $color-bg;
                 }
             }
             button[type="submit"] {
@@ -273,9 +343,74 @@ section#contact {
                 transition: background-color 0.3s ease;
 
                 &:hover {
-                    background-color: color.adjust($color-blue, $lightness: -10%);
+                    background-color: color.adjust(
+                        $color-blue,
+                        $lightness: -10%
+                    );
                 }
             }
+        }
+    }
+}
+
+footer {
+    background-color: $color-blue;
+    color: $color-white;
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 30px;
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                margin-bottom: 10px;
+            }
+
+            p {
+                text-align: center;
+                margin: 5px;
+            }
+
+            h4 {
+                margin: 0 0 12px 0;
+            }
+
+            a {
+                color: $color-white;
+                text-decoration: none;
+                margin-bottom: 6px;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: color.adjust($color-white, $lightness: -10%);
+                }
+            }
+        }
+    }
+
+    & > p {
+        justify-self: center;
+        margin: 0;
+        padding: 20px 0;
+        &::before {
+            content: "";
+            display: block;
+            width: 80%;
+            height: 1px;
+            background-color: rgba(
+                color.adjust($color-white, $saturation: -30%),
+                0.5
+            );
+            margin: 0 auto;
+            position: relative;
+            top: -24px;
         }
     }
 }
