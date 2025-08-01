@@ -2,7 +2,8 @@
 
 // variables
 $color-bg: #fafafa;
-$color-text: #000;
+$color-text: #1f232e;
+$color-text-gray: #677083;
 $color-white: #fff;
 $color-blue: #456bc4;
 $color-gray: #ecf0f9;
@@ -24,29 +25,69 @@ $color-bg-green: #f0fdf4;
 
 section {
     padding: 40px 20px;
+}
 
-    .section-title {
-        text-align: center;
-        margin-top: 0;
-    }
+.section-title {
+    text-align: center;
+    margin-top: 0;
 }
 
 .section-subtitle {
     text-align: center;
 }
 
+.text-black {
+    color: $color-text;
+}
+
+.lora {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
 header {
     height: 60px;
+    display: flex;
+    align-items: center;
+    a {
+        img {
+            width: 140px;
+        }
+    }
 }
 
 section#welcome {
-    background-image: "";
-    background-color: black;
+    background-image: url(./bg/machine-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
     padding: 40px;
+    position: relative;
 
-    .section-subtitle {
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    h2.section-title {
+        position: relative;
+        z-index: 2;
+    }
+
+    p.section-subtitle {
         margin: 0;
+        z-index: 2;
+        position: relative;
+        max-width: 700px;
+        justify-self: center;
     }
 
     .links {
@@ -65,7 +106,9 @@ section#welcome {
             border-radius: 6px;
             padding: 0.6rem 2.2rem;
             width: 100%;
+            max-width: 550px;
             text-align: center;
+            z-index: 2;
 
             &:nth-child(1) {
                 border-color: $color-blue;
@@ -78,11 +121,31 @@ section#welcome {
             gap: 16px;
         }
     }
+
+    @include desktop {
+        height: 240px;
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        .section-subtitle {
+            max-width: 700px;
+        }
+        .links {
+            max-width: 500px;
+            margin-top: 40px;
+        }
+    }
 }
 
 section#offering {
     .offers {
+        padding-top: 20px;
         .offer {
+            &:last-child {
+                margin-top: 35px;
+            }
             ul {
                 padding-left: 16px;
                 li {
@@ -91,6 +154,7 @@ section#offering {
                     }
                     span {
                         font-weight: bold;
+                        color: $color-text;
                     }
                 }
             }
@@ -103,6 +167,7 @@ section#offering {
         gap: 30px;
         align-items: center;
         justify-content: center;
+        margin-top: 45px;
 
         article {
             text-align: center;
@@ -112,7 +177,8 @@ section#offering {
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s ease;
-            max-width: 280px;
+            max-width: 600px;
+
             &:hover {
                 transform: translateY(-4px);
             }
@@ -128,6 +194,47 @@ section#offering {
 
             h4 {
                 margin: 14px 0 10px 0;
+                color: $color-text;
+            }
+        }
+    }
+
+    @include desktop {
+        justify-items: center;
+
+        p.section-subtitle {
+            max-width: 800px;
+        }
+
+        .offers {
+            display: flex;
+            width: 800px;
+            gap: 50px;
+            justify-content: center;
+
+            .offer {
+                &:first-child {
+                    width: 50%;
+                }
+
+                &:nth-child(2) {
+                    width: 40%;
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .grid {
+            flex-direction: row;
+            align-items: stretch;
+            width: min(900px, 100%);
+            gap: 0px;
+            margin-top: 40px;
+
+            article {
+                width: 300px;
+                margin: 0 10px;
+                padding: 20px 20px;
             }
         }
     }
@@ -135,6 +242,10 @@ section#offering {
 
 section#project-cycle {
     justify-items: center;
+
+    p.section-subtitle {
+        max-width: 800px;
+    }
 
     .grid {
         display: flex;
@@ -151,7 +262,7 @@ section#project-cycle {
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s ease;
-            max-width: min(450px, 100%);
+            width: min(600px, 100%);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             box-sizing: border-box;
 
@@ -171,6 +282,7 @@ section#project-cycle {
             h4 {
                 margin: 14px 0 0px 0;
                 width: 100%;
+                color: $color-text;
             }
 
             ul {
@@ -183,6 +295,7 @@ section#project-cycle {
                     position: relative;
                     padding-left: 24px;
                     margin-bottom: 8px;
+                    color: $color-text;
 
                     &:before {
                         content: "";
@@ -195,6 +308,7 @@ section#project-cycle {
                         background-image: url("./icons/achievement.png");
                         background-size: contain;
                         background-repeat: no-repeat;
+                        color: $color-text;
                     }
                 }
             }
@@ -229,16 +343,21 @@ section#project-cycle {
         border-radius: 15px;
     }
 
-    &>p {
+    & > p {
         text-align: center;
+    }
+
+    @include desktop {
+        .grid {
+            flex-direction: row;
+            max-width: 1200px;
+            align-items: stretch;
+        }
     }
 }
 
 section#team {
     justify-items: anchor-center;
-    // h2 {
-    //     margin-top: 0;
-    // }
     .box {
         padding: 10px 30px;
         border: 1px solid color.adjust($color-light-gray, $lightness: -10%);
@@ -254,12 +373,41 @@ section#team {
             max-width: 660px;
         }
     }
+
+    @include desktop {
+        .box {
+            width: 100%;
+            max-width: 780px;
+        }
+    }
 }
 
 section#contact {
+    p {
+        margin: 6px 0;
+    }
     .container {
         display: flex;
         flex-direction: column;
+        width: 100%;
+        max-width: 1000px;
+        justify-self: center;
+
+        @include desktop {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 20px;
+
+            .info {
+                width: 45%;
+            }
+
+            .form {
+                width: 55%;
+            }
+        }
 
         .info {
             article {
@@ -284,12 +432,15 @@ section#contact {
 
                     h4 {
                         margin: 0 0 12px 0;
+                        color: $color-text;
                     }
 
                     p {
                         margin: 0 0 6px 0;
+                        color: $color-text;
                         &:last-child {
                             margin-bottom: 0;
+                            color: $color-text-gray;
                         }
                     }
                 }
@@ -301,6 +452,7 @@ section#contact {
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             padding: 24px;
             border-radius: 8px;
+            color: $color-text;
 
             h3 {
                 margin-top: 0;
@@ -330,6 +482,10 @@ section#contact {
                     border-radius: 6px;
                     border: 1px solid $color-gray;
                     background-color: $color-bg;
+
+                    &::placeholder {
+                        font-family: "Inter", sans-serif;
+                    }
                 }
             }
             button[type="submit"] {
@@ -356,30 +512,43 @@ section#contact {
 footer {
     background-color: $color-blue;
     color: $color-white;
+    width: 100vw;
 
     .grid {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding: 20px;
+        align-items: flex-start;
+        padding: 20px 40px;
         gap: 30px;
+        justify-self: center;
+        max-width: 1300px;
+
+        @include desktop {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
 
         .col {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
 
             img {
                 margin-bottom: 10px;
+                width: 180px;
             }
 
             p {
-                text-align: center;
+                text-align: flex-start;
                 margin: 5px;
+                font-weight: 200;
             }
 
-            h4 {
+            h4.col-title {
                 margin: 0 0 12px 0;
+                font-weight: bold;
             }
 
             a {
@@ -387,6 +556,7 @@ footer {
                 text-decoration: none;
                 margin-bottom: 6px;
                 transition: color 0.3s ease;
+                font-weight: 200;
 
                 &:hover {
                     color: color.adjust($color-white, $lightness: -10%);
@@ -399,10 +569,13 @@ footer {
         justify-self: center;
         margin: 0;
         padding: 20px 0;
+        text-align: center;
+        font-weight: 200;
+        max-width: 400px;
         &::before {
             content: "";
             display: block;
-            width: 80%;
+            width: min(90%, 1000px);
             height: 1px;
             background-color: rgba(
                 color.adjust($color-white, $saturation: -30%),
@@ -411,6 +584,11 @@ footer {
             margin: 0 auto;
             position: relative;
             top: -24px;
+
+            @include desktop {
+                width: min(90vw, 1050px);
+                left: -80%;
+            }
         }
     }
 }

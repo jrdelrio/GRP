@@ -1,31 +1,78 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const handleSubmit = async (event: SubmitEvent) => {
+    event.preventDefault();
+
+    const form = event.target as HTMLFormElement;
+    const name = (form.elements.namedItem('name') as HTMLInputElement).value.trim();
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value.trim();
+
+    // Validar campos requeridos
+    if (!name || !email) {
+        alert(
+            "Por favor, completa los campos obligatorios: Nombre Completo y Correo Electrónico."
+        );
+        return;
+    }
+
+    // Recolectar datos
+    const data = {
+        name,
+        email,
+        company: (form.elements.namedItem('company') as HTMLInputElement).value.trim(),
+        phone: (form.elements.namedItem('phone') as HTMLInputElement).value.trim(),
+        project: (form.elements.namedItem('project') as HTMLInputElement).value.trim(),
+        message: (form.elements.namedItem('message') as HTMLInputElement).value.trim(),
+    };
+
+    try {
+        const response = await fetch("/api/contact-handler", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            alert("Consulta enviada correctamente. ¡Gracias!");
+            form.reset();
+        } else {
+            alert(
+                "Hubo un error al enviar la consulta. Por favor, inténtalo más tarde."
+            );
+        }
+    } catch (error) {
+        alert(
+            "Error de red. Por favor, comprobar conexión e intentar nuevamente."
+        );
+    }
+};
 ---
 
 <Layout>
     <header>
-        <a href=""><img src="" alt="" /></a>
+        <a href=""><img src="./logo/main-logo-blue.png" alt="" /></a>
         <nav></nav>
     </header>
 
     <section id="welcome">
-        <h2 class="section-title">GRP Ingeniería</h2>
+		<div class="overlay"></div>
+        <h2 class="section-title lora">GRP Ingeniería</h2>
         <p class="section-subtitle">
             Expertos en gestión contractual para proyectos de Metro,
             Ferrocarriles, Concesiones e Infraestructura.
-        </p>
-        <p class="section-subtitle">
+      
             Maximizamos el éxito de tus proyectos con enfoque estratégico
             independiente.
         </p>
         <div class="links">
-            <a href="" class="services">Conocer Servicios →</a>
-            <a href="" class="services">Solicitar Consulta</a>
+            <a href="">Conocer Servicios →</a>
+            <a href="">Solicitar Consulta</a>
         </div>
     </section>
 
     <section id="offering">
-        <h2 class="section-title">Qué Ofrecemos</h2>
+        <h2 class="section-title text-black lora">Qué Ofrecemos</h2>
         <p class="section-subtitle">
             Una opinión técnica contractual independiente, con apoyo a la
             gestión en la dirección de proyectos, orientado a mandantes y
@@ -36,7 +83,7 @@ import Layout from "../layouts/Layout.astro";
 
         <div class="offers">
             <article class="offer">
-                <h3>Nuestro Enfoque</h3>
+                <h3 class="text-black lora">Nuestro Enfoque</h3>
                 <p>
                     Proporcionamos asesorías técnicas especializadas que
                     maximizan el éxito de proyectos, mediante un enfoque
@@ -57,7 +104,7 @@ import Layout from "../layouts/Layout.astro";
                 </p>
             </article>
             <article class="offer">
-                <h3>Nuestra Área de Gestión</h3>
+                <h3 class="text-black lora">Nuestra Área de Gestión</h3>
                 <ul>
                     <li>
                         <p>
@@ -108,7 +155,7 @@ import Layout from "../layouts/Layout.astro";
                 <h4>Experiencia Comprobada</h4>
                 <p>
                     Más de 15 años gestionando proyectos complejos de Metro,
-                    Ferrocarriles, Concesiones e I nfraestructura.
+                    Ferrocarriles, Concesiones e Infraestructura.
                 </p>
             </article>
             <article>
@@ -123,7 +170,7 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section id="project-cycle">
-        <h2 class="section-title">
+        <h2 class="section-title text-black lora">
             Acompañamiento experto en Todo el Ciclo del Proyecto
         </h2>
         <p class="section-subtitle">
@@ -134,7 +181,7 @@ import Layout from "../layouts/Layout.astro";
         </p>
         <div class="grid">
             <article>
-                <img src="" alt="" />
+                <img src="./icons/licitacion.png" alt="" />
                 <h4>Proceso de Licitación</h4>
                 <p>
                     Análisis integral para optimizar la participación en
@@ -159,7 +206,7 @@ import Layout from "../layouts/Layout.astro";
                 </ul>
             </article>
             <article>
-                <img src="" alt="" />
+                <img src="./icons/construction.png" alt="" />
                 <h4>Proceso de Construcción</h4>
                 <p>
                     Gestión proactiva durante la ejecución del proyecto para
@@ -182,7 +229,7 @@ import Layout from "../layouts/Layout.astro";
                 </ul>
             </article>
             <article>
-                <img src="" alt="" />
+                <img src="./icons/peritaje.png" alt="" />
                 <h4>Proceso de Peritaje</h4>
                 <p>
                     Gestión proactiva durante la ejecución del proyecto para
@@ -213,14 +260,14 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section id="team">
-        <h2 class="section-title">Nuestro Equipo</h2>
+        <h2 class="section-title text-black lora">Nuestro Equipo</h2>
         <p class="section-subtitle">
             Contamos con un equipo asociado experto en programación, legal,
             medioambiente y evaluación de daños.
         </p>
 
         <div class="box">
-            <h4>Nuestra Filosofía de Trabajo</h4>
+            <h4 class="text-black lora">Nuestra Filosofía de Trabajo</h4>
             <p>
                 Creemos en la importancia de una gestión contractual proactiva y
                 estratégica. Nuestro enfo que se basa en la prevención de
@@ -231,7 +278,7 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section id="contact">
-        <h2 class="section-title">Contacto</h2>
+        <h2 class="section-title text-black lora">Contacto</h2>
         <p class="section-subtitle">
             ¿Necesitas asesoría especializada para tu proyecto de
             infraestructura?
@@ -242,7 +289,7 @@ import Layout from "../layouts/Layout.astro";
 
         <div class="container">
             <div class="info">
-                <h3>Información de contacto</h3>
+                <h3 class="text-black">Información de contacto</h3>
                 <article>
                     <img src="" alt="" />
                     <div class="data">
@@ -280,11 +327,13 @@ import Layout from "../layouts/Layout.astro";
                 </article>
             </div>
 
-            <form action="" class="form">
+            <form action="" class="form" >
                 <h3>Solicitar Consulta</h3>
                 <div class="input-group">
                     <div class="input-field">
-                        <label class="required" for="name">Nombre Completo</label>
+                        <label class="required" for="name"
+                            >Nombre Completo</label
+                        >
                         <input
                             type="text"
                             name="name"
@@ -293,14 +342,15 @@ import Layout from "../layouts/Layout.astro";
                         />
                     </div>
                     <div class="input-field">
-                        <label class="required" for="email">Correo Electrónico</label>
+                        <label class="required" for="email"
+                            >Correo Electrónico</label
+                        >
                         <input
                             type="text"
                             name="email"
                             inputmode="email"
                             placeholder="ejemplo@empresa.com"
                             required
-							
                         />
                     </div>
                 </div>
@@ -333,7 +383,7 @@ import Layout from "../layouts/Layout.astro";
                 </div>
                 <div class="input-field">
                     <label for="message">Mensaje</label>
-                    <textarea name="" id="" rows="5" name="message"></textarea>
+                    <textarea name="" id="" rows="5" name="message" placeholder="Describe brevemente tu proyecto y el tipo de asesoría que necesitas..."></textarea>
                 </div>
                 <button type="submit">Enviar Consulta</button>
             </form>
@@ -343,7 +393,7 @@ import Layout from "../layouts/Layout.astro";
     <footer>
         <div class="grid">
             <div class="col">
-                <a href=""><img src="" alt="GRP Ingeniería Logo" /></a>
+                <a href=""><img src="./logo/main-logo-white.png" alt="GRP Ingeniería Logo" /></a>
                 <p>
                     Especialistas en asesorías técnicas para obras de
                     infraestructura.
