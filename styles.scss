@@ -1,0 +1,281 @@
+@use "sass:color";
+
+
+// variables
+$color-bg: #fafafa;
+$color-text: black;
+$color-white: #fff;
+$color-blue: #456bc4;
+$color-gray: #ecf0f9;
+$color-light-blue: #ecf0f9;
+$color-orange: #fff7ed;
+$color-green: #f0fcf4;
+$color-light-gray: #f0f2f7;
+$color-bg-gray: #edf0f5;
+
+// mixins
+@mixin desktop {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+section {
+    padding: 40px 20px;
+
+    .section-title {
+        text-align: center;
+    }
+}
+
+.section-subtitle {
+    text-align: center;
+}
+
+header {
+    height: 60px;
+}
+
+section#welcome {
+    background-image: "";
+    background-color: black;
+    color: white;
+    padding: 40px;
+
+    .section-subtitle {
+        margin: 0;
+    }
+
+    .links {
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        gap: 14px;
+        width: 90%;
+        align-items: center;
+
+        a {
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            border-radius: 6px;
+            padding: 0.6rem 2.2rem;
+            width: 100%;
+            text-align: center;
+
+            &:nth-child(1) {
+                border-color: $color-blue;
+                background-color: $color-blue;
+            }
+        }
+
+        @include desktop {
+            flex-direction: row;
+            gap: 16px;
+        }
+    }
+}
+
+section#offering {
+    .offers {
+        .offer {
+            ul {
+                li {
+                    &::marker {
+                        color: $color-blue;
+                    }
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+
+        article {
+            text-align: center;
+            padding: 20px 50px;
+            border: 2px solid $color-gray;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            max-width: 280px;
+            &:hover {
+                transform: translateY(-4px);
+            }
+
+            img {
+                height: 20px;
+                background-color: $color-gray;
+                padding: 10px;
+                width: 20px;
+                object-fit: contain;
+                border-radius: 6px;
+            }
+
+            h4 {
+                margin: 14px 0 10px 0;
+            }
+        }
+    }
+}
+
+section#project-cycle {
+    justify-items: center;
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        margin: 60px 0 40px 0;
+
+        article {
+            text-align: start;
+            padding: 20px 30px 20px 20px;
+            // border: 2px solid $color-gray;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            max-width: min(450px, 100%);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+
+            &:hover {
+                transform: translateY(-4px);
+            }
+
+            img {
+                height: 20px;
+                background-color: $color-gray;
+                padding: 10px;
+                width: 20px;
+                object-fit: contain;
+                border-radius: 6px;
+            }
+
+            h4 {
+                margin: 14px 0 0px 0;
+                width: 100%;
+            }
+
+            ul {
+                padding-inline-start: 16px;
+            }
+        }
+    }
+
+    a {
+        display: flex;
+        align-content: center;
+    }
+}
+
+section#team {
+    justify-items: anchor-center;
+    .box {
+        padding: 10px 30px;
+        border: 1px solid $color-gray;
+        border-radius: 8px;
+        background-color: $color-light-gray;
+        justify-items: center;
+        text-align: center;
+        max-width: 700px;
+        margin-top: 40px;
+
+        p {
+            width: 100%;
+            max-width: 660px;
+        }
+    }
+}
+
+section#contact {
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        .info {
+            article {
+                display: flex;
+                background-color: $color-white;
+                margin-bottom: 25px;
+                padding: 24px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+                &:last-child {
+                    box-shadow: none;
+                    background-color: $color-bg-gray;
+                }
+
+                .data {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    h4 {
+                        margin: 0 0 12px 0;
+                    }
+
+                    p {
+                        margin: 0 0 6px 0;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        form.form {
+            .input-group {
+                display: flex;
+                flex-direction: column;
+            }
+            .input-field {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 20px;
+
+                label {
+                    margin-bottom: 8px;
+                    &::after {
+                        content: " *";
+                        color: red;
+                    }
+                }
+
+                input,
+                textarea {
+                    padding: 10px;
+                    border-radius: 6px;
+                    border: 1px solid $color-gray;
+                }
+            }
+            button[type="submit"] {
+                background-color: $color-blue;
+                color: $color-white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 6px;
+                width: 100%;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: color.adjust($color-blue, $lightness: -10%);
+                }
+            }
+        }
+    }
+}

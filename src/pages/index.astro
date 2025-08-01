@@ -1,11 +1,351 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+    <header>
+        <a href=""><img src="" alt="" /></a>
+        <nav></nav>
+    </header>
+
+    <section id="welcome">
+        <h2 class="section-title">GRP Ingeniería</h2>
+        <p class="section-subtitle">
+            Expertos en gestión contractual para proyectos de Metro,
+            Ferrocarriles, Concesiones e Infraestructura.
+        </p>
+        <p class="section-subtitle">
+            Maximizamos el éxito de tus proyectos con enfoque estratégico
+            independiente.
+        </p>
+        <div class="links">
+            <a href="" class="services">Conocer Servicios</a>
+            <a href="" class="services">Solicitar Consulta</a>
+        </div>
+    </section>
+
+    <section id="offering">
+        <h2 class="section-title">Qué Ofrecemos</h2>
+        <p class="section-subtitle">
+            Una opinión técnica contractual independiente, con apoyo a la
+            gestión en la dirección de proyectos, orientado a mandantes y
+            contratistas, cuya finalidad es asegurar el cumplimiento del
+            contrato en costo y plazo, y contar con información oportuna de
+            desviaciones para la toma de decisiones.
+        </p>
+
+        <div class="offers">
+            <article class="offer">
+                <h3>Nuestro Enfoque</h3>
+                <p>
+                    Proporcionamos asesorías técnicas especializadas que
+                    maximizan el éxito de proyectos, mediante un enfoque
+                    estratégico de los problemas que pueden venir por la toma de
+                    decisiones (análisis de pro y contra con sus riesgos).
+                </p>
+                <p>
+                    Nos especializamos en la prevención de reclamaciones
+                    (claims) y en la gestión eficaz del arbitraje, estructurando
+                    el trabajo de manera estratégica para alcanzar los objetivos
+                    del proyecto, optimizar los recursos disponibles y mitigar
+                    los riesgos.
+                </p>
+                <p>
+                    Además, administramos la relación técnica entre mandante y
+                    contratista, con la capacidad de liderar proyectos complejos
+                    y desafiantes.
+                </p>
+            </article>
+            <article class="offer">
+                <h3>Nuestra Área de Gestión</h3>
+                <ul>
+                    <li>
+                        <p>
+                            <span>Metro:</span>
+                            Líneas de transporte subterráneo y elevado
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span>Ferrocarriles:</span>
+                            Sistemas de transporte ferroviario urbano e interurbano
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span>Concesiones:</span>
+                            Proyectos bajo modalidad de concesión
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span>Infraestructura:</span>
+                            Construcción y modernización de obras
+                        </p>
+                    </li>
+                </ul>
+            </article>
+        </div>
+        <div class="grid">
+            <article>
+                <img src="./icons/focus.png" alt="" srcset="" />
+                <h4>Enfoque Estratégico</h4>
+                <p>
+                    Análisis integral desde la perspectiva contractual y técnica
+                    para optimizar resultados del proyecto.
+                </p>
+            </article>
+            <article>
+                <img src="./icons/eye.png" alt="" srcset="" />
+                <h4>Visión Independiente</h4>
+                <p>
+                    Asesoría objetiva e imparcial que prioriza los intereses del
+                    cliente y el éxito del proyecto.
+                </p>
+            </article>
+            <article>
+                <img src="./icons/medal.png" alt="" srcset="" />
+                <h4>Experiencia Comprobada</h4>
+                <p>
+                    Más de 15 años gestionando proyectos complejos de Metro,
+                    Ferrocarriles, Concesiones e I nfraestructura.
+                </p>
+            </article>
+            <article>
+                <img src="./icons/risk.png" alt="" srcset="" />
+                <h4>Evaluación de Riesgos</h4>
+                <p>
+                    Identificación temprana de riesgos contractuales para evitar
+                    sobrecostos y retrasos.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section id="project-cycle">
+        <h2 class="section-title">
+            Acompañamiento experto en Todo el Ciclo del Proyecto
+        </h2>
+        <p class="section-subtitle">
+            Nuestra asesoría contempla las etapas de licitación y construcción,
+            incluyendo la prevención de reclamaciones y arbitrajes. Contamos con
+            experiencia en el gerenciamiento integral del proyecto para el
+            mandante, bajo un enfo que OPM (Owner Project Management) .
+        </p>
+        <div class="grid">
+            <article>
+                <img src="" alt="" />
+                <h4>Proceso de Licitación</h4>
+                <p>
+                    Análisis integral para optimizar la participación en
+                    licitaciones y maximizar probabilidades de éxito.
+                </p>
+                <ul>
+                    <li>Revisión exhaustiva de contratos y documentos</li>
+                    <li>Análisis de madurez y solidez del proyecto (FEL3)</li>
+                    <li>
+                        Análisis de completitud de la información y coherencia
+                        de esta
+                    </li>
+                    <li>
+                        Evaluación de constructibilidad y programa MsProyect /
+                        Primavera P6
+                    </li>
+                    <li>
+                        Elaboración del CAPEX, Plan de Ejecución, Modelos de
+                        Contrato
+                    </li>
+                    <li>Desarrollo de Estrategia de Licitación</li>
+                </ul>
+            </article>
+            <article>
+                <img src="" alt="" />
+                <h4>Proceso de Construcción</h4>
+                <p>
+                    Gestión proactiva durante la ejecución del proyecto para
+                    asegurar cumplimiento de objetivos.
+                </p>
+                <ul>
+                    <li>Gestión integral de riesgos y mitigación</li>
+                    <li>Estudio técnico del contrato</li>
+                    <li>Gestión en las comunicaciones de obra</li>
+                    <li>Auditoría forense de proyectos</li>
+                    <li>
+                        Preparación y gestión de solicitudes de mayores costo y
+                        plazo adicional
+                    </li>
+                    <li>Estudios de pérdida de productividad</li>
+                    <li>
+                        Acompañamiento en las etapas de discusión y/o
+                        negociación
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <img src="" alt="" />
+                <h4>Proceso de Peritaje</h4>
+                <p>
+                    Gestión proactiva durante la ejecución del proyecto para
+                    asegurar cumplimiento de objetivos.
+                </p>
+                <ul>
+                    <li>Gestión integral de riesgos y mitigación</li>
+                    <li>Estudio técnico del contrato</li>
+                    <li>Gestión en las comunicaciones de obra</li>
+                    <li>Auditoría forense de proyectos</li>
+                    <li>
+                        Preparación y gestión de solicitudes de mayores costos y
+                        plazo adicional
+                    </li>
+                    <li>Estudios de pérdida de productividad</li>
+                    <li>
+                        Acompañamiento en las etapas de discusión y/o
+                        negociación
+                    </li>
+                </ul>
+            </article>
+        </div>
+        <a href="">Consulta Gratis</a>
+        <p>
+            ¿Necesita asesoría específica para su proyecto? Contacte con
+            nuestros especialistas.
+        </p>
+    </section>
+
+    <!-- <section id="services">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <p class="section-subtitle">
+            Ofrecemos asesorías técnicas especializadas en todas las fases del
+            proyecto, desde la licitación hasta la prevención de reclamaciones y
+            arbitrajes.
+        </p>
+    </section> -->
+
+    <section id="team">
+        <h2 class="section-title">Nuestro Equipo</h2>
+        <p class="section-subtitle">
+            Contamos con un equipo asociado experto en programación, legal,
+            medioambiente y evaluación de daños.
+        </p>
+
+        <div class="box">
+            <h4>Nuestra Filosofía de Trabajo</h4>
+            <p>
+                Creemos en la importancia de una gestión contractual proactiva y
+                estratégica. Nuestro enfo que se basa en la prevención de
+                riesgos, la comunicación transparente y la búsqueda constante de
+                soluciones que maximicen el valor para nuestros clientes.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-subtitle">
+            ¿Necesitas asesoría especializada para tu proyecto de
+            infraestructura?
+        </p>
+        <p class="section-subtitle">
+            Contáctanos para una consulta inicial sin compromiso.
+        </p>
+
+        <div class="container">
+            <div class="info">
+                <h3>Información de contacto</h3>
+                <article>
+                    <img src="" alt="" />
+                    <div class="data">
+                        <h4>Correo Electrónico</h4>
+                        <p>contacto@grpingenieria.cl</p>
+                        <p>Respuesta en 24 horas</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="" />
+                    <div class="data">
+                        <h4>Teléfono</h4>
+                        <p>+569 6444 1479</p>
+                        <p>Lunes a Viernes 9:00 - 18:00</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="" />
+                    <div class="data">
+                        <h4>Oficina Principal</h4>
+                        <p>Santiago, Chile</p>
+                        <p>Reuniones presenciales con cita previa</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="" alt="" />
+                    <div class="data">
+                        <h4>Consulta Inicial Sin Compromiso</h4>
+                        <p>
+                            Ofrecemos una primera consulta sin costo para
+                            evaluar su proyecto y definir la mejor estrategia de
+                            asesoría técnica.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <form action="" class="form">
+                <h3>Solicitar Consulta</h3>
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="name">Nombre Completo</label>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Nombre completo"
+                            required
+                        />
+                    </div>
+                    <div class="input-field">
+                        <label for="email">Correo Electrónico</label>
+                        <input
+                            type="text"
+                            name="email"
+                            inputmode="email"
+                            placeholder="ejemplo@empresa.com"
+                            required
+                        />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="company">Empresa/Organización</label>
+                        <input
+                            type="text"
+                            placeholder="Nombre de la empresa"
+                            name="company"
+                        />
+                    </div>
+                    <div class="input-field">
+                        <label for="phone">Teléfono</label>
+                        <input
+                            type="text"
+                            inputmode="tel"
+                            placeholder="+56 9 1234 5678"
+                            name="phone"
+                        />
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="project">Tipo de Proyecto</label>
+                    <input
+                        type="text"
+                        placeholder="Metro, Ferrocarril, Concesión, etc."
+                        name="project"
+                    />
+                </div>
+                <div class="input-field">
+                    <label for="message">Mensaje</label>
+                    <textarea name="" id="" rows="5" name="message"></textarea>
+                </div>
+				<button type="submit">Enviar Consulta</button>
+            </form>
+        </div>
+        <footer></footer>
+    </section>
 </Layout>
