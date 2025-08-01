@@ -1,0 +1,365 @@
+---
+
+---
+
+<header>
+    <a href="/" class="logo-link">
+        <img src="./logo/main-logo-blue.png" alt="Logo" class="logo" />
+    </a>
+
+    <!-- Navbar desktop -->
+    <nav class="navbar desktop-nav">
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#equipo">Equipo</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div class="language-switch">
+            <label class="switch">
+                <input type="checkbox" aria-label="Cambiar idioma" />
+                <span class="slider"></span>
+            </label>
+            <span class="lang-label">ES / EN</span>
+        </div>
+    </nav>
+
+    <!-- Hamburger icon for mobile -->
+    <button
+        id="hamburger-btn"
+        class="hamburger"
+        aria-label="Abrir menú"
+        type="button"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Mobile fullscreen menu -->
+    <nav id="mobile-menu" class="mobile-nav" aria-hidden="true" tabindex="-1">
+        <button
+            id="close-btn"
+            class="close-btn"
+            aria-label="Cerrar menú"
+            type="button">&times;</button
+        >
+        <ul class="mobile-nav-links">
+            <li><a href="#inicio" tabindex="-1">Inicio</a></li>
+            <li><a href="#quienes-somos" tabindex="-1">Quiénes Somos</a></li>
+            <li><a href="#servicios" tabindex="-1">Servicios</a></li>
+            <li><a href="#equipo" tabindex="-1">Equipo</a></li>
+            <li><a href="#contacto" tabindex="-1">Contacto</a></li>
+        </ul>
+        <div class="mobile-language-switch">
+            <label class="switch">
+                <input
+                    type="checkbox"
+                    aria-label="Cambiar idioma"
+                    tabindex="-1"
+                />
+                <span class="slider"></span>
+            </label>
+            <span class="lang-label">ES / EN</span>
+        </div>
+    </nav>
+</header>
+
+<style lang="scss">
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        background-color: white;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 10;
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+
+            .logo {
+                height: 48px;
+                width: auto;
+            }
+        }
+
+        /* ------------------ Desktop navbar ------------------ */
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            .nav-links {
+                list-style: none;
+                display: flex;
+                gap: 2rem;
+                margin: 0;
+                padding: 0;
+
+                li a {
+                    text-decoration: none;
+                    color: #1f232e;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    transition: color 0.3s ease;
+
+                    &:hover,
+                    &:focus {
+                        color: #0070f3;
+                        outline: none;
+                    }
+                }
+            }
+
+            .language-switch {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-weight: 600;
+                color: #1f232e;
+                font-size: 0.9rem;
+                user-select: none;
+
+                .switch {
+                    position: relative;
+                    display: inline-block;
+                    width: 44px;
+                    height: 24px;
+
+                    input {
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+                        margin: 0;
+                    }
+
+                    .slider {
+                        position: absolute;
+                        cursor: pointer;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: #ccc;
+                        border-radius: 12px;
+                        transition: 0.4s;
+
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            height: 18px;
+                            width: 18px;
+                            left: 3px;
+                            bottom: 3px;
+                            background-color: #0070f3;
+                            border-radius: 50%;
+                            transition: 0.4s;
+                        }
+                    }
+
+                    input:checked + .slider {
+                        background-color: #ccc;
+                    }
+
+                    input:checked + .slider::before {
+                        transform: translateX(20px);
+                    }
+                }
+            }
+        }
+
+        /* Hamburger (mobile) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 28px;
+            height: 22px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            box-sizing: border-box;
+
+            span {
+                width: 28px;
+                height: 3px;
+                background-color: #1f232e;
+                border-radius: 2px;
+                transition: all 0.3s linear;
+                display: block;
+            }
+        }
+
+        /* Mobile menu fullscreen */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            box-sizing: border-box;
+            z-index: 999;
+
+            opacity: 0;
+            transform: translateY(-100%);
+            pointer-events: none;
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
+
+            &.visible {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+
+            .close-btn {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+                font-size: 3rem;
+                background: none;
+                border: none;
+                color: #1f232e;
+                cursor: pointer;
+                line-height: 1;
+            }
+
+            .mobile-nav-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+
+                li {
+                    margin-bottom: 1.5rem;
+
+                    a {
+                        text-decoration: none;
+                        font-size: 2rem;
+                        font-weight: 600;
+                        color: #1f232e;
+                        transition: color 0.3s ease;
+
+                        &:hover,
+                        &:focus {
+                            color: #0070f3;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+
+            .mobile-language-switch {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                font-weight: 600;
+                font-size: 1.2rem;
+                color: #1f232e;
+
+                .switch {
+                    width: 50px;
+                    height: 28px;
+
+                    .slider::before {
+                        height: 22px;
+                        width: 22px;
+                        left: 3px;
+                        bottom: 3px;
+                    }
+
+                    input {
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    #mobile-menu {
+        background-color: blue;
+    }
+
+    /* -------- Responsive styles -------- */
+    @media screen and (max-width: 1024px) {
+        header {
+            justify-content: space-between;
+
+            .desktop-nav {
+                display: none !important;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1025px) {
+        #mobile-menu {
+            display: none !important;
+        }
+    }
+</style>
+
+<script is:inline>
+    (() => {
+        const hamburger = document.getElementById("hamburger-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeBtn = document.getElementById("close-btn");
+
+        // Seguridad para evitar errores si algún elemento no existe
+        if (!hamburger || !mobileMenu || !closeBtn) return;
+
+        const openMenu = () => {
+            mobileMenu.classList.add("visible");
+            mobileMenu.setAttribute("aria-hidden", "false");
+            mobileMenu.focus();
+            document.body.style.overflow = "hidden"; // bloquear scroll fondo
+        };
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove("visible");
+            mobileMenu.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = ""; // habilitar scroll fondo
+            hamburger.focus();
+        };
+
+        hamburger.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+
+        // Cerrar cuando se cliquea fuera del contenido del menú (en el fondo)
+        mobileMenu.addEventListener("click", (e) => {
+            if (e.target === mobileMenu) {
+                closeMenu();
+            }
+        });
+
+        // Cerrar con tecla Escape
+        document.addEventListener("keydown", (e) => {
+            if (
+                e.key === "Escape" &&
+                mobileMenu.classList.contains("visible")
+            ) {
+                closeMenu();
+            }
+        });
+    })();
+</script>

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
 
 const handleSubmit = async (event: SubmitEvent) => {
     event.preventDefault();
@@ -50,10 +51,7 @@ const handleSubmit = async (event: SubmitEvent) => {
 ---
 
 <Layout>
-    <header>
-        <a href=""><img src="./logo/main-logo-blue.png" alt="" /></a>
-        <nav></nav>
-    </header>
+    <Header />
 
     <section id="welcome">
 		<div class="overlay"></div>
