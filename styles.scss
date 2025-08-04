@@ -248,8 +248,9 @@ section#project-cycle {
     }
 
     .grid {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
         gap: 30px;
         align-items: center;
         justify-content: center;
@@ -353,7 +354,8 @@ section#project-cycle {
 
     @include desktop {
         .grid {
-            flex-direction: row;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
             max-width: 1200px;
             align-items: stretch;
         }

@@ -17,7 +17,7 @@
         </ul>
         <div class="language-switch">
             <label class="switch">
-                <input type="checkbox" aria-label="Cambiar idioma" />
+                <input type="checkbox" aria-label="Cambiar idioma" id="language-switcher" />
                 <span class="slider"></span>
             </label>
             <span class="lang-label">ES / EN</span>
@@ -56,7 +56,7 @@
                     type="checkbox"
                     aria-label="Cambiar idioma"
                     tabindex="-1"
-                    name="language-switcher"
+                    id="language-switcher"
                 />
 
                 <span class="slider"></span>
@@ -411,5 +411,11 @@
                 }
             });
         });
+
+        const languageSwitch = document.getElementById('language-switcher');
+        let ES = true;
+        languageSwitch.addEventListener("click", (ev) => {
+            ES = !ES
+        })
     })();
 </script>
