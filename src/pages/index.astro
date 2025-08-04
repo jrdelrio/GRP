@@ -6,8 +6,12 @@ const handleSubmit = async (event: SubmitEvent) => {
     event.preventDefault();
 
     const form = event.target as HTMLFormElement;
-    const name = (form.elements.namedItem('name') as HTMLInputElement).value.trim();
-    const email = (form.elements.namedItem('email') as HTMLInputElement).value.trim();
+    const name = (
+        form.elements.namedItem("name") as HTMLInputElement
+    ).value.trim();
+    const email = (
+        form.elements.namedItem("email") as HTMLInputElement
+    ).value.trim();
 
     // Validar campos requeridos
     if (!name || !email) {
@@ -21,10 +25,18 @@ const handleSubmit = async (event: SubmitEvent) => {
     const data = {
         name,
         email,
-        company: (form.elements.namedItem('company') as HTMLInputElement).value.trim(),
-        phone: (form.elements.namedItem('phone') as HTMLInputElement).value.trim(),
-        project: (form.elements.namedItem('project') as HTMLInputElement).value.trim(),
-        message: (form.elements.namedItem('message') as HTMLInputElement).value.trim(),
+        company: (
+            form.elements.namedItem("company") as HTMLInputElement
+        ).value.trim(),
+        phone: (
+            form.elements.namedItem("phone") as HTMLInputElement
+        ).value.trim(),
+        project: (
+            form.elements.namedItem("project") as HTMLInputElement
+        ).value.trim(),
+        message: (
+            form.elements.namedItem("message") as HTMLInputElement
+        ).value.trim(),
     };
 
     try {
@@ -54,14 +66,12 @@ const handleSubmit = async (event: SubmitEvent) => {
     <Header />
 
     <section id="welcome">
-		<div class="overlay"></div>
+        <div class="overlay"></div>
         <h2 class="section-title lora">GRP Ingeniería</h2>
         <p class="section-subtitle">
             Expertos en gestión contractual para proyectos de Metro,
-            Ferrocarriles, Concesiones e Infraestructura.
-      
-            Maximizamos el éxito de tus proyectos con enfoque estratégico
-            independiente.
+            Ferrocarriles, Concesiones e Infraestructura. Maximizamos el éxito
+            de tus proyectos con enfoque estratégico independiente.
         </p>
         <div class="links">
             <a href="">Conocer Servicios →</a>
@@ -186,21 +196,10 @@ const handleSubmit = async (event: SubmitEvent) => {
                     licitaciones y maximizar probabilidades de éxito.
                 </p>
                 <ul>
-                    <li>Revisión exhaustiva de contratos y documentos</li>
-                    <li>Análisis de madurez y solidez del proyecto (FEL3)</li>
-                    <li>
-                        Análisis de completitud de la información y coherencia
-                        de esta
-                    </li>
-                    <li>
-                        Evaluación de constructibilidad y programa MsProyect /
-                        Primavera P6
-                    </li>
-                    <li>
-                        Elaboración del CAPEX, Plan de Ejecución, Modelos de
-                        Contrato
-                    </li>
-                    <li>Desarrollo de Estrategia de Licitación</li>
+                    <li>Preparación de documentos técnicos de licitación y la coordinacion de estos</li>
+                    <li>Definición de las distintas alternativas para la estrategia de licitación, análisis de mercado de posibles licitantes y tamaños de contrato.</li>
+                    <li>Contamos con especialidta legal en contratos de obras públicas, HSEQ y experto en Primavera P6, entre otros</li>
+                    <li>Manejo de stakeholders, autoridades y relaciones con la comunidad</li>
                 </ul>
             </article>
             <article>
@@ -325,7 +324,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                 </article>
             </div>
 
-            <form action="" class="form" >
+            <form action="" class="form">
                 <h3>Solicitar Consulta</h3>
                 <div class="input-group">
                     <div class="input-field">
@@ -381,7 +380,13 @@ const handleSubmit = async (event: SubmitEvent) => {
                 </div>
                 <div class="input-field">
                     <label for="message">Mensaje</label>
-                    <textarea name="" id="" rows="5" name="message" placeholder="Describe brevemente tu proyecto y el tipo de asesoría que necesitas..."></textarea>
+                    <textarea
+                        name=""
+                        id=""
+                        rows="5"
+                        name="message"
+                        placeholder="Describe brevemente tu proyecto y el tipo de asesoría que necesitas..."
+                    ></textarea>
                 </div>
                 <button type="submit">Enviar Consulta</button>
             </form>
@@ -391,7 +396,12 @@ const handleSubmit = async (event: SubmitEvent) => {
     <footer>
         <div class="grid">
             <div class="col">
-                <a href=""><img src="./logo/main-logo-white.png" alt="GRP Ingeniería Logo" /></a>
+                <a href=""
+                    ><img
+                        src="./logo/main-logo-white.png"
+                        alt="GRP Ingeniería Logo"
+                    /></a
+                >
                 <p>
                     Especialistas en asesorías técnicas para obras de
                     infraestructura.
