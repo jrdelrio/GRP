@@ -67,21 +67,29 @@ const handleSubmit = async (event: SubmitEvent) => {
 
     <section id="welcome">
         <div class="overlay"></div>
-        <h2 class="section-title lora">GRP Ingeniería</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title lora" data-i18n="welcome.title">
+            GRP Ingeniería
+        </h2>
+        <p class="section-subtitle" data-i18n="welcome.subtitle">
             Expertos en gestión contractual para proyectos de Metro,
             Ferrocarriles, Concesiones e Infraestructura. Maximizamos el éxito
             de tus proyectos con enfoque estratégico independiente.
         </p>
         <div class="links">
-            <a href="">Conocer Servicios →</a>
-            <a href="">Solicitar Consulta</a>
+            <a href="#offering" data-i18n="welcome.buttonServices"
+                >Conocer Servicios →</a
+            >
+            <a href="#contact" data-i18n="welcome.buttonContact"
+                >Solicitar Consulta</a
+            >
         </div>
     </section>
 
     <section id="offering">
-        <h2 class="section-title text-black lora">Qué Ofrecemos</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title text-black lora" data-i18n="offering.title">
+            Qué Ofrecemos
+        </h2>
+        <p class="section-subtitle" data-i18n="offering.subtitle">
             Una opinión técnica contractual independiente, con apoyo a la
             gestión en la dirección de proyectos, orientado a mandantes y
             contratistas, cuya finalidad es asegurar el cumplimiento del
@@ -91,50 +99,62 @@ const handleSubmit = async (event: SubmitEvent) => {
 
         <div class="offers">
             <article class="offer">
-                <h3 class="text-black lora">Nuestro Enfoque</h3>
-                <p>
+                <h3 class="text-black lora" data-i18n="offering.focus.title">
+                    Nuestro Enfoque
+                </h3>
+                <p data-i18n="offering.focus.infoP1">
                     Proporcionamos asesorías técnicas especializadas que
                     maximizan el éxito de proyectos, mediante un enfoque
                     estratégico de los problemas que pueden venir por la toma de
                     decisiones (análisis de pro y contra con sus riesgos).
                 </p>
-                <p>
+                <p data-i18n="offering.focus.infoP2">
                     Nos especializamos en la prevención de reclamaciones
                     (claims) y en la gestión eficaz del arbitraje, estructurando
                     el trabajo de manera estratégica para alcanzar los objetivos
                     del proyecto, optimizar los recursos disponibles y mitigar
                     los riesgos.
                 </p>
-                <p>
+                <p data-i18n="offering.focus.infoP3">
                     Además, administramos la relación técnica entre mandante y
                     contratista, con la capacidad de liderar proyectos complejos
                     y desafiantes.
                 </p>
             </article>
             <article class="offer">
-                <h3 class="text-black lora">Nuestra Área de Gestión</h3>
+                <h3 class="text-black lora" data-i18n="offering.area.title">
+                    Nuestra Área de Gestión
+                </h3>
                 <ul>
                     <li>
-                        <p>
-                            <span>Metro:</span>
+                        <p data-i18n="offering.area.list.item1.info">
+                            <span data-i18n="offering.area.list.item1.span"
+                                >Metro:</span
+                            >
                             Líneas de transporte subterráneo y elevado
                         </p>
                     </li>
                     <li>
-                        <p>
-                            <span>Ferrocarriles:</span>
+                        <p data-i18n="offering.area.list.item2.info">
+                            <span data-i18n="offering.area.list.item2.span"
+                                >Ferrocarriles:</span
+                            >
                             Sistemas de transporte ferroviario urbano e interurbano
                         </p>
                     </li>
                     <li>
-                        <p>
-                            <span>Concesiones:</span>
+                        <p data-i18n="offering.area.list.item3.info">
+                            <span data-i18n="offering.area.list.item3.span"
+                                >Concesiones:</span
+                            >
                             Proyectos bajo modalidad de concesión
                         </p>
                     </li>
                     <li>
-                        <p>
-                            <span>Infraestructura:</span>
+                        <p data-i18n="offering.area.list.item4.info">
+                            <span data-i18n="offering.area.list.item4.span"
+                                >Infraestructura:</span
+                            >
                             Construcción y modernización de obras
                         </p>
                     </li>
@@ -143,33 +163,41 @@ const handleSubmit = async (event: SubmitEvent) => {
         </div>
         <div class="grid">
             <article>
-                <img src="./icons/focus.png" alt="" srcset="" />
-                <h4>Enfoque Estratégico</h4>
-                <p>
+                <img src="./icons/focus.png" alt="enfoque estrategico" />
+                <h4 data-i18n="offering.grid.item1.title">
+                    Enfoque Estratégico
+                </h4>
+                <p data-i18n="offering.grid.item1.info">
                     Análisis integral desde la perspectiva contractual y técnica
                     para optimizar resultados del proyecto.
                 </p>
             </article>
             <article>
-                <img src="./icons/eye.png" alt="" srcset="" />
-                <h4>Visión Independiente</h4>
-                <p>
+                <img src="./icons/eye.png" alt="visión independiente" />
+                <h4 data-i18n="offering.grid.item2.title">
+                    Visión Independiente
+                </h4>
+                <p data-i18n="offering.grid.item2.info">
                     Asesoría objetiva e imparcial que prioriza los intereses del
                     cliente y el éxito del proyecto.
                 </p>
             </article>
             <article>
-                <img src="./icons/medal.png" alt="" srcset="" />
-                <h4>Experiencia Comprobada</h4>
-                <p>
+                <img src="./icons/medal.png" alt="experiencia comprobada" />
+                <h4 data-i18n="offering.grid.item3.title">
+                    Experiencia Comprobada
+                </h4>
+                <p data-i18n="offering.grid.item3.info">
                     Más de 15 años gestionando proyectos complejos de Metro,
                     Ferrocarriles, Concesiones e Infraestructura.
                 </p>
             </article>
             <article>
-                <img src="./icons/risk.png" alt="" srcset="" />
-                <h4>Evaluación de Riesgos</h4>
-                <p>
+                <img src="./icons/risk.png" alt="evaluación de riesgos" />
+                <h4 data-i18n="offering.grid.item4.title">
+                    Evaluación de Riesgos
+                </h4>
+                <p data-i18n="offering.grid.item4.info">
                     Identificación temprana de riesgos contractuales para evitar
                     sobrecostos y retrasos.
                 </p>
@@ -178,134 +206,178 @@ const handleSubmit = async (event: SubmitEvent) => {
     </section>
 
     <section id="project-cycle">
-        <h2 class="section-title text-black lora">
+        <h2
+            class="section-title text-black lora"
+            data-i18n="project-cycle.title"
+        >
             Acompañamiento experto en Todo el Ciclo del Proyecto
         </h2>
-        <p class="section-subtitle">
+        <p class="section-subtitle" data-i18n="project-cycle.subtitle">
             Nuestra asesoría contempla las etapas de licitación y construcción,
             incluyendo la prevención de reclamaciones y arbitrajes. Contamos con
             experiencia en el gerenciamiento integral del proyecto para el
-            mandante, bajo un enfo que OPM (Owner Project Management) .
+            mandante, bajo un enfo que OPM (Owner Project Management).
         </p>
         <div class="grid">
             <article>
-                <img src="./icons/licitacion.png" alt="" />
-                <h4>Proceso de Licitación</h4>
-                <p>
+                <img src="./icons/licitacion.png" alt="licitaciones" />
+                <h4 data-i18n="project-cycle.grid.card1.title">
+                    Proceso de Licitación
+                </h4>
+                <p data-i18n="project-cycle.grid.card1.subtitle">
                     Análisis integral para optimizar la participación en
                     licitaciones y maximizar probabilidades de éxito.
                 </p>
                 <ul>
-                    <li>
+                    <li data-i18n="project-cycle.grid.card1.list.item1">
                         Preparación de documentos técnicos de licitación y la
                         coordinacion de estos
                     </li>
-                    <li>
+                    <li data-i18n="project-cycle.grid.card1.list.item2">
                         Definición de las distintas alternativas para la
                         estrategia de licitación, análisis de mercado de
                         posibles licitantes y tamaños de contrato.
                     </li>
-                    <li>
+                    <li data-i18n="project-cycle.grid.card1.list.item3">
                         Contamos con especialidta legal en contratos de obras
                         públicas, HSEQ y experto en Primavera P6, entre otros
                     </li>
-                    <li>
+                    <li data-i18n="project-cycle.grid.card1.list.item4">
                         Manejo de stakeholders, autoridades y relaciones con la
                         comunidad
                     </li>
                 </ul>
             </article>
             <article>
-                <img src="" alt="" />
-                <h4>Presupuestos</h4>
-                <p></p>
+                <img src="./icons/budget.png" alt="presupuesto" />
+                <h4 data-i18n="project-cycle.grid.card2.title">Presupuestos</h4>
+                <p data-i18n="project-cycle.grid.card2.subtitle"></p>
                 <ul>
-                    <li>
+                    <li data-i18n="project-cycle.grid.card2.list.item1">
                         Estimaciones de CAPEX y OPEX en distintas etapas de
                         inversión, contingencia y escalamiento, metodología AACE
                         clase 5 a 1
                     </li>
-                    <li>
+                    <li data-i18n="project-cycle.grid.card2.list.item2">
                         Elaboración presupuesto referencial con sus respaldos,
                         análisis y Precios Unitarios y Gastos Generales
                     </li>
-                    <li>
+                    <li data-i18n="project-cycle.grid.card2.list.item3">
                         Preparación programa y rendimientos en MS Project o
                         Primavera P6
                     </li>
-                    <li>Metodología constructiva proyectos complejos</li>
-                    <li>Mejora secuencias constructivas</li>
-                    <li>
+                    <li data-i18n="project-cycle.grid.card2.list.item4">
+                        Metodología constructiva proyectos complejos
+                    </li>
+                    <li data-i18n="project-cycle.grid.card2.list.item5">
+                        Mejora secuencias constructivas
+                    </li>
+                    <li data-i18n="project-cycle.grid.card2.list.item6">
                         Determinación cuadrillas, maquinaria y equipos
                         necesarios
                     </li>
-                    <li>Matriz de permisos</li>
+                    <li data-i18n="project-cycle.grid.card2.list.item7">
+                        Matriz de permisos
+                    </li>
                 </ul>
             </article>
             <article>
-                <img src="./icons/construction.png" alt="" />
-                <h4>Dirección de Proyectos</h4>
-                <p>
+                <img
+                    src="./icons/construction.png"
+                    alt="direccion de proyectos"
+                />
+                <h4 data-i18n="project-cycle.grid.card3.title">
+                    Dirección de Proyectos
+                </h4>
+                <p data-i18n="project-cycle.grid.card3.subtitle">
                     Gestión proactiva durante la ejecución del proyecto para
                     asegurar cumplimiento de objetivos.
                 </p>
                 <ul>
-                    <li>Gestión integral de riesgos y mitigación</li>
-                    <li>Estudio técnico del contrato</li>
-                    <li>Gestión en las comunicaciones de obra</li>
-                    <li>Auditoría forense de proyectos</li>
-                    <li>
+                    <li data-i18n="project-cycle.grid.card3.list.item1">
+                        Gestión integral de riesgos y mitigación
+                    </li>
+                    <li data-i18n="project-cycle.grid.card3.list.item2">
+                        Estudio técnico del contrato
+                    </li>
+                    <li data-i18n="project-cycle.grid.card3.list.item3">
+                        Gestión en las comunicaciones de obra
+                    </li>
+                    <li data-i18n="project-cycle.grid.card3.list.item4">
+                        Auditoría forense de proyectos
+                    </li>
+                    <li data-i18n="project-cycle.grid.card3.list.item5">
                         Preparación y gestión de solicitudes de mayores costo y
                         plazo adicional
                     </li>
-                    <li>Estudios de pérdida de productividad</li>
-                    <li>
+                    <li data-i18n="project-cycle.grid.card3.list.item6">
+                        Estudios de pérdida de productividad
+                    </li>
+                    <li data-i18n="project-cycle.grid.card3.list.item7">
                         Acompañamiento en las etapas de discusión y/o
                         negociación
                     </li>
                 </ul>
             </article>
             <article>
-                <img src="./icons/peritaje.png" alt="" />
-                <h4>Gestión Contractual</h4>
-                <p>
+                <img src="./icons/peritaje.png" alt="gestión contractual" />
+                <h4 data-i18n="project-cycle.grid.card4.title">
+                    Gestión Contractual
+                </h4>
+                <p data-i18n="project-cycle.grid.card4.subtitle">
                     Gestión proactiva durante la ejecución del proyecto para
                     asegurar cumplimiento de objetivos.
                 </p>
                 <ul>
-                    <li>Gestión integral de riesgos y mitigación</li>
-                    <li>Estudio técnico del contrato</li>
-                    <li>Gestión en las comunicaciones de obra</li>
-                    <li>Auditoría forense de proyectos</li>
-                    <li>
+                    <li data-i18n="project-cycle.grid.card4.list.item1">
+                        Gestión integral de riesgos y mitigación
+                    </li>
+                    <li data-i18n="project-cycle.grid.card4.list.item2">
+                        Estudio técnico del contrato
+                    </li>
+                    <li data-i18n="project-cycle.grid.card4.list.item3">
+                        Gestión en las comunicaciones de obra
+                    </li>
+                    <li data-i18n="project-cycle.grid.card4.list.item4">
+                        Auditoría forense de proyectos
+                    </li>
+                    <li data-i18n="project-cycle.grid.card4.list.item5">
                         Preparación y gestión de solicitudes de mayores costos y
                         plazo adicional
                     </li>
-                    <li>Estudios de pérdida de productividad</li>
-                    <li>
+                    <li data-i18n="project-cycle.grid.card4.list.item6">
+                        Estudios de pérdida de productividad
+                    </li>
+                    <li data-i18n="project-cycle.grid.card4.list.item7">
                         Acompañamiento en las etapas de discusión y/o
                         negociación
                     </li>
                 </ul>
             </article>
         </div>
-        <a href="">Consulta Gratis</a>
-        <p>
+        <a href="#contact" data-i18n="project-cycle.buttonContact"
+            >Consulta Gratis</a
+        >
+        <p data-i18n="project-cycle.info">
             ¿Necesita asesoría específica para su proyecto? Contacte con
             nuestros especialistas.
         </p>
     </section>
 
     <section id="team">
-        <h2 class="section-title text-black lora">Nuestro Equipo</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title text-black lora" data-i18n="team.title">
+            Nuestro Equipo
+        </h2>
+        <p class="section-subtitle" data-i18n="team.subtitle">
             Contamos con un equipo asociado experto en programación, legal,
             medioambiente y evaluación de daños.
         </p>
 
         <div class="box">
-            <h4 class="text-black lora">Nuestra Filosofía de Trabajo</h4>
-            <p>
+            <h4 class="text-black lora" data-i18n="team.box.title">
+                Nuestra Filosofía de Trabajo
+            </h4>
+            <p data-i18n="team.box.subtitle">
                 Creemos en la importancia de una gestión contractual proactiva y
                 estratégica. Nuestro enfo que se basa en la prevención de
                 riesgos, la comunicación transparente y la búsqueda constante de
@@ -315,47 +387,49 @@ const handleSubmit = async (event: SubmitEvent) => {
     </section>
 
     <section id="contact">
-        <h2 class="section-title text-black lora">Contacto</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title text-black lora" data-i18n="contact.title">
+            Contacto
+        </h2>
+        <p class="section-subtitle" data-i18n="contact.subtitle1">
             ¿Necesitas asesoría especializada para tu proyecto de
             infraestructura?
         </p>
-        <p class="section-subtitle">
+        <p class="section-subtitle" data-i18n="contact.subtitle2">
             Contáctanos para una consulta inicial sin compromiso.
         </p>
 
         <div class="container">
             <div class="info">
-                <h3 class="text-black">Información de contacto</h3>
+                <h3 class="text-black" data-i18n="contact.contactInfo.title">Información de contacto</h3>
                 <article>
                     <img src="" alt="" />
                     <div class="data">
-                        <h4>Correo Electrónico</h4>
-                        <p>contacto@grpingenieria.cl</p>
-                        <p>Respuesta en 24 horas</p>
+                        <h4 data-i18n="contact.contactInfo.infoList.item1.title">Correo Electrónico</h4>
+                        <p data-i18n="contact.contactInfo.infoList.item1.data">contacto@grpingenieria.cl</p>
+                        <p data-i18n="contact.contactInfo.infoList.item1.extra">Respuesta en 24 horas</p>
                     </div>
                 </article>
                 <article>
                     <img src="" alt="" />
                     <div class="data">
-                        <h4>Teléfono</h4>
+                        <h4 data-i18n="contact.contactInfo.infoList.item2.title">Teléfono</h4>
                         <p>+569 6444 1479</p>
-                        <p>Lunes a Viernes 9:00 - 18:00</p>
+                        <p data-i18n="contact.contactInfo.infoList.item2.extra">Lunes a Viernes 9:00 - 18:00</p>
                     </div>
                 </article>
                 <article>
                     <img src="" alt="" />
                     <div class="data">
-                        <h4>Oficina Principal</h4>
-                        <p>Santiago, Chile</p>
-                        <p>Reuniones presenciales con cita previa</p>
+                        <h4 data-i18n="contact.contactInfo.infoList.item3.title">Oficina Principal</h4>
+                        <p data-i18n="contact.contactInfo.infoList.item3.data">Santiago, Chile</p>
+                        <p data-i18n="contact.contactInfo.infoList.item3.extra">Reuniones presenciales con cita previa</p>
                     </div>
                 </article>
                 <article>
                     <img src="" alt="" />
                     <div class="data">
-                        <h4>Consulta Inicial Sin Compromiso</h4>
-                        <p>
+                        <h4 data-i18n="contact.contactInfo.infoList.item4.title">Consulta Inicial Sin Compromiso</h4>
+                        <p data-i18n="contact.contactInfo.infoList.item4.extra">
                             Ofrecemos una primera consulta sin costo para
                             evaluar su proyecto y definir la mejor estrategia de
                             asesoría técnica.
@@ -365,10 +439,10 @@ const handleSubmit = async (event: SubmitEvent) => {
             </div>
 
             <form action="" class="form">
-                <h3>Solicitar Consulta</h3>
+                <h3 data-i18n="contact.contactForm.title">Solicitar Consulta</h3>
                 <div class="input-group">
                     <div class="input-field">
-                        <label class="required" for="name"
+                        <label class="required" for="name" data-i18n="contact.contactForm.name.label"
                             >Nombre Completo</label
                         >
                         <input
@@ -379,7 +453,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                         />
                     </div>
                     <div class="input-field">
-                        <label class="required" for="email"
+                        <label class="required" for="email" data-i18n="contact.contactForm.email.label"
                             >Correo Electrónico</label
                         >
                         <input
@@ -393,7 +467,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                 </div>
                 <div class="input-group">
                     <div class="input-field">
-                        <label for="company">Empresa/Organización</label>
+                        <label for="company" data-i18n="contact.contactForm.company.label">Empresa/Organización</label>
                         <input
                             type="text"
                             placeholder="Nombre de la empresa"
@@ -401,7 +475,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                         />
                     </div>
                     <div class="input-field">
-                        <label for="phone">Teléfono</label>
+                        <label for="phone" data-i18n="contact.contactForm.phone.label">Teléfono</label>
                         <input
                             type="text"
                             inputmode="tel"
@@ -411,7 +485,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                     </div>
                 </div>
                 <div class="input-field">
-                    <label for="project">Tipo de Proyecto</label>
+                    <label for="project" data-i18n="contact.contactForm.project.label">Tipo de Proyecto</label>
                     <input
                         type="text"
                         placeholder="Metro, Ferrocarril, Concesión, etc."
@@ -419,7 +493,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                     />
                 </div>
                 <div class="input-field">
-                    <label for="message">Mensaje</label>
+                    <label for="message" data-i18n="contact.contactForm.message.label">Mensaje</label>
                     <textarea
                         name=""
                         id=""
@@ -428,7 +502,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                         placeholder="Describe brevemente tu proyecto y el tipo de asesoría que necesitas..."
                     ></textarea>
                 </div>
-                <button type="submit">Enviar Consulta</button>
+                <button type="submit" data-i18n="contact.contactForm.submitButton">Enviar Consulta</button>
             </form>
         </div>
     </section>
@@ -442,30 +516,47 @@ const handleSubmit = async (event: SubmitEvent) => {
                         alt="GRP Ingeniería Logo"
                     /></a
                 >
-                <p>
+                <p data-i18n="footer.col1.subtitle1">
                     Especialistas en asesorías técnicas para obras de
                     infraestructura.
                 </p>
-                <p>
+                <p data-i18n="footer.col1.subtitle2">
                     Experiencia comprobada en Metro, Ferrocarriles y
                     Concesiones.
                 </p>
             </div>
             <div class="col">
-                <h4 class="col-title">Contacto</h4>
+                <h4 class="col-title" data-i18n="footer.col2.title">Contacto</h4>
                 <a href="">contacto@grpingenieria.cl</a>
                 <a href="">+569 9 4444 4444</a>
-                <a href="">Santiago, Chile</a>
+                <a href="" data-i18n="footer.col2.city">Santiago, Chile</a>
             </div>
             <div class="col">
-                <h4 class="col-title">Servicios</h4>
-                <a href="">Proceso de Licitación</a>
-                <a href="">Proceso de Construcción</a>
-                <a href="">Prevención de Reclamaciones</a>
-                <a href="">Auditoría Contratos</a>
-                <a href="">Informe Pericial</a>
+                <h4 class="col-title" data-i18n="footer.col3.title">Servicios</h4>
+                <a href="" data-i18n="footer.col3.link1">Proceso de Licitación</a>
+                <a href="" data-i18n="footer.col3.link2">Proceso de Construcción</a>
+                <a href="" data-i18n="footer.col3.link3">Prevención de Reclamaciones</a>
+                <a href="" data-i18n="footer.col3.link4">Auditoría Contratos</a>
+                <a href="" data-i18n="footer.col3.link5">Informe Pericial</a>
             </div>
         </div>
-        <p>&copy; 2025 GRP Ingeniería. Todos los derechos reservados.</p>
+        <p data-i18n="footer.copywrite">&copy; 2025 GRP Ingeniería. Todos los derechos reservados.</p>
     </footer>
 </Layout>
+
+<script is:inline>
+    const allLinks = document.querySelectorAll("a[href^='#']");
+
+    allLinks.forEach((link) => {
+        link.addEventListener("click", (ev) => {
+            const targetId = link.getAttribute("href")?.substring(1);
+            const targetEl = document.getElementById(targetId);
+
+            if (targetEl) {
+                ev.preventDefault();
+                targetEl.scrollIntoView({ behavior: "smooth" });
+                closeMenu();
+            }
+        });
+    });
+</script>

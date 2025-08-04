@@ -1,5 +1,5 @@
 ---
-
+import {translations} from "../data/translations.js";
 ---
 
 <header>
@@ -10,17 +10,22 @@
     <!-- Navbar desktop -->
     <nav class="navbar desktop-nav">
         <ul class="nav-links">
-            <li><a href="#welcome">Inicio</a></li>
-            <li><a href="#offering">Servicios</a></li>
-            <li><a href="#team">Equipo</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="#welcome" data-i18n="nav.welcome">Inicio</a></li>
+            <li><a href="#offering" data-i18n="nav.offering">Servicios</a></li>
+            <li><a href="#team" data-i18n="nav.team">Equipo</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
         </ul>
         <div class="language-switch">
             <label class="switch">
-                <input type="checkbox" aria-label="Cambiar idioma" id="language-switcher" />
+                <input
+                    type="checkbox"
+                    aria-label="Cambiar idioma"
+                    class="language-switcher"
+                />
                 <span class="slider"></span>
             </label>
-            <span class="lang-label">ES / EN</span>
+            <!-- <span class="lang-label">ES / EN</span> -->
+            <span class="lang-label">🇪🇸</span>
         </div>
     </nav>
 
@@ -45,10 +50,10 @@
             type="button">&times;</button
         >
         <ul class="mobile-nav-links">
-            <li><a href="#welcome">Inicio</a></li>
-            <li><a href="#offering">Servicios</a></li>
-            <li><a href="#team">Equipo</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="#welcome" data-i18n="nav.welcome">Inicio</a></li>
+            <li><a href="#offering" data-i18n="nav.offering">Servicios</a></li>
+            <li><a href="#team" data-i18n="nav.team">Equipo</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
         </ul>
         <div class="mobile-language-switch">
             <label class="switch">
@@ -56,12 +61,13 @@
                     type="checkbox"
                     aria-label="Cambiar idioma"
                     tabindex="-1"
-                    id="language-switcher"
+                    class="language-switcher"
                 />
 
                 <span class="slider"></span>
             </label>
-            <span class="lang-label">ES / EN</span>
+            <!-- <span class="lang-label">ES / EN</span> -->
+            <span class="lang-label">🇪🇸</span>
         </div>
     </nav>
 </header>
@@ -124,7 +130,7 @@
                 gap: 0.5rem;
                 font-weight: 600;
                 color: #1f232e;
-                font-size: 0.9rem;
+                font-size: 2rem;
                 user-select: none;
 
                 .switch {
@@ -273,7 +279,7 @@
                 align-items: center;
                 gap: 1rem;
                 font-weight: 600;
-                font-size: 1.2rem;
+                font-size: 3rem;
                 color: #1f232e;
 
                 .switch {
@@ -354,27 +360,27 @@
 </style>
 
 <script is:inline>
-    (() => {
-        const hamburger = document.getElementById("hamburger-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-        const closeBtn = document.getElementById("close-btn");
+    const hamburger = document.getElementById("hamburger-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeBtn = document.getElementById("close-btn");
 
+    const openMenu = () => {
+        mobileMenu.classList.add("visible");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        mobileMenu.focus();
+        document.body.style.overflow = "hidden";
+    };
+
+    const closeMenu = () => {
+        mobileMenu.classList.remove("visible");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        hamburger.focus();
+    };
+
+    (function () {
         // Seguridad para evitar errores si algún elemento no existe
         if (!hamburger || !mobileMenu || !closeBtn) return;
-
-        const openMenu = () => {
-            mobileMenu.classList.add("visible");
-            mobileMenu.setAttribute("aria-hidden", "false");
-            mobileMenu.focus();
-            document.body.style.overflow = "hidden";
-        };
-
-        const closeMenu = () => {
-            mobileMenu.classList.remove("visible");
-            mobileMenu.setAttribute("aria-hidden", "true");
-            document.body.style.overflow = "";
-            hamburger.focus();
-        };
 
         hamburger.addEventListener("click", openMenu);
         closeBtn.addEventListener("click", closeMenu);
@@ -402,8 +408,6 @@
                 const targetId = link.getAttribute("href")?.substring(1);
                 const targetEl = document.getElementById(targetId);
 
-                console.log(targetId);
-
                 if (targetEl) {
                     ev.preventDefault();
                     targetEl.scrollIntoView({ behavior: "smooth" });
@@ -411,11 +415,49 @@
                 }
             });
         });
-
-        const languageSwitch = document.getElementById('language-switcher');
-        let ES = true;
-        languageSwitch.addEventListener("click", (ev) => {
-            ES = !ES
-        })
     })();
+</script>
+
+<script is:inline define:vars={{ translations }}>
+
+
+    function setLanguage(lang) {
+        const elements = document.querySelectorAll("[data-i18n]");
+        elements.forEach((el) => {
+            const key = el.getAttribute("data-i18n");
+            const text = key
+                .split(".")
+                .reduce((o, k) => (o || {})[k], translations[lang]);
+            if (text) el.textContent = text;
+        });
+
+        // Guardar preferencia en localStorage
+        localStorage.setItem("lang", lang);
+
+        const langLabels = document.querySelectorAll(".lang-label");
+        langLabels.forEach((label) => {
+            label.textContent = lang === "ES" ? "🇪🇸" : "🇺🇸";
+        });
+    }
+
+    const languageSwitchers = document.querySelectorAll(".language-switcher");
+
+    localStorage.setItem("lang", "ES");
+    let currentLang = localStorage.getItem("lang");
+
+    setLanguage(currentLang);
+
+    // sincronizar estado inicial del switch
+    languageSwitchers.forEach((sw) => {
+        sw.checked = currentLang === "ES";
+    });
+
+    languageSwitchers.forEach((sw) => {
+        sw.addEventListener("change", (ev) => {
+            currentLang = sw.checked ? "ES" : "EN";
+            setLanguage(currentLang);
+            // sincronizar todos los switches
+            languageSwitchers.forEach((s) => (s.checked = sw.checked));
+        });
+    });
 </script>
