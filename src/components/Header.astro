@@ -1,5 +1,5 @@
 ---
-import {translations} from "../data/translations.js";
+import translations from "../data/translations";
 ---
 
 <header>
@@ -419,8 +419,6 @@ import {translations} from "../data/translations.js";
 </script>
 
 <script is:inline define:vars={{ translations }}>
-
-
     function setLanguage(lang) {
         const elements = document.querySelectorAll("[data-i18n]");
         elements.forEach((el) => {

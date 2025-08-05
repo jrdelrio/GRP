@@ -1,4 +1,4 @@
-export const translations = {
+const translations = {
     ES: {
         nav: {
             welcome: "Inicio",
@@ -205,11 +205,6 @@ export const translations = {
             },
             col3: {
                 title: "Servicios",
-                link1: "Proceso de Licitación",
-                link2: "Proceso de Construcción",
-                link3: "Prevención de Reclamaciones",
-                link4: "Auditoría Contratos",
-                link5: "Informe Pericial",
             },
             copywrite: "© 2025 GRP Ingeniería. Todos los derechos reservados.",
         },
@@ -419,13 +414,10 @@ export const translations = {
             },
             col3: {
                 title: "Services",
-                link1: "Bidding Process",
-                link2: "Construction Process",
-                link3: "Claims Prevention",
-                link4: "Contract Audit",
-                link5: "Expert Report",
             },
             copywrite: "© 2025 GRP Engineering. All rights reserved.",
         },
     },
 };
+
+export default translations;
