@@ -76,11 +76,15 @@ const handleSubmit = async (event: SubmitEvent) => {
             de tus proyectos con enfoque estratégico independiente.
         </p>
         <div class="links">
-            <a href="#offering" data-i18n="welcome.buttonServices"
-                >Conocer Servicios →</a
+            <a
+                href="#offering"
+                data-i18n="welcome.buttonServices"
+                class="flip-in-hor-bottom-d600ms">Conocer Servicios →</a
             >
-            <a href="#contact" data-i18n="welcome.buttonContact"
-                >Solicitar Consulta</a
+            <a
+                href="#contact"
+                data-i18n="welcome.buttonContact"
+                class="flip-in-hor-bottom-d800ms">Solicitar Consulta</a
             >
         </div>
     </section>
@@ -121,6 +125,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                     y desafiantes.
                 </p>
             </article>
+
             <article class="offer">
                 <h3 class="text-black lora" data-i18n="offering.area.title">
                     Nuestra Área de Gestión
@@ -248,6 +253,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                     </li>
                 </ul>
             </article>
+
             <article>
                 <img src="./icons/budget.png" alt="presupuesto" />
                 <h4 data-i18n="project-cycle.grid.card2.title">Presupuestos</h4>
@@ -281,6 +287,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                     </li>
                 </ul>
             </article>
+
             <article>
                 <img
                     src="./icons/construction.png"
@@ -319,6 +326,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                     </li>
                 </ul>
             </article>
+
             <article>
                 <img src="./icons/peritaje.png" alt="gestión contractual" />
                 <h4 data-i18n="project-cycle.grid.card4.title">
@@ -355,8 +363,10 @@ const handleSubmit = async (event: SubmitEvent) => {
                 </ul>
             </article>
         </div>
-        <a href="#contact" data-i18n="project-cycle.buttonContact"
-            >Consulta Gratis</a
+        <a
+            href="#contact"
+            data-i18n="project-cycle.buttonContact"
+            class="heartbeat">Consulta Gratis</a
         >
         <p data-i18n="project-cycle.info">
             ¿Necesita asesoría específica para su proyecto? Contacte con
@@ -400,35 +410,63 @@ const handleSubmit = async (event: SubmitEvent) => {
 
         <div class="container">
             <div class="info">
-                <h3 class="text-black" data-i18n="contact.contactInfo.title">Información de contacto</h3>
+                <h3 class="text-black" data-i18n="contact.contactInfo.title">
+                    Información de contacto
+                </h3>
                 <article>
                     <img src="" alt="" />
                     <div class="data">
-                        <h4 data-i18n="contact.contactInfo.infoList.item1.title">Correo Electrónico</h4>
-                        <p data-i18n="contact.contactInfo.infoList.item1.data">contacto@grpingenieria.cl</p>
-                        <p data-i18n="contact.contactInfo.infoList.item1.extra">Respuesta en 24 horas</p>
+                        <h4
+                            data-i18n="contact.contactInfo.infoList.item1.title"
+                        >
+                            Correo Electrónico
+                        </h4>
+                        <p data-i18n="contact.contactInfo.infoList.item1.data">
+                            contacto@grpingenieria.cl
+                        </p>
+                        <p data-i18n="contact.contactInfo.infoList.item1.extra">
+                            Respuesta en 24 horas
+                        </p>
                     </div>
                 </article>
                 <article>
                     <img src="" alt="" />
                     <div class="data">
-                        <h4 data-i18n="contact.contactInfo.infoList.item2.title">Teléfono</h4>
+                        <h4
+                            data-i18n="contact.contactInfo.infoList.item2.title"
+                        >
+                            Teléfono
+                        </h4>
                         <p>+569 6444 1479</p>
-                        <p data-i18n="contact.contactInfo.infoList.item2.extra">Lunes a Viernes 9:00 - 18:00</p>
+                        <p data-i18n="contact.contactInfo.infoList.item2.extra">
+                            Lunes a Viernes 9:00 - 18:00
+                        </p>
                     </div>
                 </article>
                 <article>
                     <img src="" alt="" />
                     <div class="data">
-                        <h4 data-i18n="contact.contactInfo.infoList.item3.title">Oficina Principal</h4>
-                        <p data-i18n="contact.contactInfo.infoList.item3.data">Santiago, Chile</p>
-                        <p data-i18n="contact.contactInfo.infoList.item3.extra">Reuniones presenciales con cita previa</p>
+                        <h4
+                            data-i18n="contact.contactInfo.infoList.item3.title"
+                        >
+                            Oficina Principal
+                        </h4>
+                        <p data-i18n="contact.contactInfo.infoList.item3.data">
+                            Santiago, Chile
+                        </p>
+                        <p data-i18n="contact.contactInfo.infoList.item3.extra">
+                            Reuniones presenciales con cita previa
+                        </p>
                     </div>
                 </article>
                 <article>
                     <img src="" alt="" />
                     <div class="data">
-                        <h4 data-i18n="contact.contactInfo.infoList.item4.title">Consulta Inicial Sin Compromiso</h4>
+                        <h4
+                            data-i18n="contact.contactInfo.infoList.item4.title"
+                        >
+                            Consulta Inicial Sin Compromiso
+                        </h4>
                         <p data-i18n="contact.contactInfo.infoList.item4.extra">
                             Ofrecemos una primera consulta sin costo para
                             evaluar su proyecto y definir la mejor estrategia de
@@ -439,10 +477,15 @@ const handleSubmit = async (event: SubmitEvent) => {
             </div>
 
             <form action="" class="form">
-                <h3 data-i18n="contact.contactForm.title">Solicitar Consulta</h3>
+                <h3 data-i18n="contact.contactForm.title">
+                    Solicitar Consulta
+                </h3>
                 <div class="input-group">
                     <div class="input-field">
-                        <label class="required" for="name" data-i18n="contact.contactForm.name.label"
+                        <label
+                            class="required"
+                            for="name"
+                            data-i18n="contact.contactForm.name.label"
                             >Nombre Completo</label
                         >
                         <input
@@ -454,7 +497,10 @@ const handleSubmit = async (event: SubmitEvent) => {
                         />
                     </div>
                     <div class="input-field">
-                        <label class="required" for="email" data-i18n="contact.contactForm.email.label"
+                        <label
+                            class="required"
+                            for="email"
+                            data-i18n="contact.contactForm.email.label"
                             >Correo Electrónico</label
                         >
                         <input
@@ -469,7 +515,11 @@ const handleSubmit = async (event: SubmitEvent) => {
                 </div>
                 <div class="input-group">
                     <div class="input-field">
-                        <label for="company" data-i18n="contact.contactForm.company.label">Empresa/Organización</label>
+                        <label
+                            for="company"
+                            data-i18n="contact.contactForm.company.label"
+                            >Empresa/Organización</label
+                        >
                         <input
                             type="text"
                             placeholder="Nombre de la empresa"
@@ -478,7 +528,11 @@ const handleSubmit = async (event: SubmitEvent) => {
                         />
                     </div>
                     <div class="input-field">
-                        <label for="phone" data-i18n="contact.contactForm.phone.label">Teléfono</label>
+                        <label
+                            for="phone"
+                            data-i18n="contact.contactForm.phone.label"
+                            >Teléfono</label
+                        >
                         <input
                             type="text"
                             inputmode="tel"
@@ -488,7 +542,11 @@ const handleSubmit = async (event: SubmitEvent) => {
                     </div>
                 </div>
                 <div class="input-field">
-                    <label for="project" data-i18n="contact.contactForm.project.label">Tipo de Proyecto</label>
+                    <label
+                        for="project"
+                        data-i18n="contact.contactForm.project.label"
+                        >Tipo de Proyecto</label
+                    >
                     <input
                         type="text"
                         placeholder="Metro, Ferrocarril, Concesión, etc."
@@ -497,7 +555,11 @@ const handleSubmit = async (event: SubmitEvent) => {
                     />
                 </div>
                 <div class="input-field">
-                    <label for="message" data-i18n="contact.contactForm.message.label">Mensaje</label>
+                    <label
+                        for="message"
+                        data-i18n="contact.contactForm.message.label"
+                        >Mensaje</label
+                    >
                     <textarea
                         name=""
                         id=""
@@ -507,7 +569,11 @@ const handleSubmit = async (event: SubmitEvent) => {
                         data-i18n-placeholder="contact.contactForm.message.placeholder"
                     ></textarea>
                 </div>
-                <button type="submit" data-i18n="contact.contactForm.submitButton">Enviar Consulta</button>
+                <button
+                    type="submit"
+                    data-i18n="contact.contactForm.submitButton"
+                    >Enviar Consulta</button
+                >
             </form>
         </div>
     </section>
@@ -531,20 +597,36 @@ const handleSubmit = async (event: SubmitEvent) => {
                 </p>
             </div>
             <div class="col">
-                <h4 class="col-title" data-i18n="footer.col2.title">Contacto</h4>
-                <a href="mailto:contacto@grpingenieria.cl">contacto@grpingenieria.cl</a>
+                <h4 class="col-title" data-i18n="footer.col2.title">
+                    Contacto
+                </h4>
+                <a href="mailto:contacto@grpingenieria.cl"
+                    >contacto@grpingenieria.cl</a
+                >
                 <a href="tel:+56964441479">+56 9 6444 1479</a>
                 <a href="" data-i18n="footer.col2.city">Santiago, Chile</a>
             </div>
             <div class="col">
-                <h4 class="col-title" data-i18n="footer.col3.title">Servicios</h4>
-                <a href="#offering" data-i18n="offering.grid.item1.title">Proceso de Licitación</a>
-                <a href="#offering" data-i18n="offering.grid.item2.title">Proceso de Construcción</a>
-                <a href="#offering" data-i18n="offering.grid.item3.title">Prevención de Reclamaciones</a>
-                <a href="#offering" data-i18n="offering.grid.item4.title">Auditoría Contratos</a>
+                <h4 class="col-title" data-i18n="footer.col3.title">
+                    Servicios
+                </h4>
+                <a href="#offering" data-i18n="offering.grid.item1.title"
+                    >Proceso de Licitación</a
+                >
+                <a href="#offering" data-i18n="offering.grid.item2.title"
+                    >Proceso de Construcción</a
+                >
+                <a href="#offering" data-i18n="offering.grid.item3.title"
+                    >Prevención de Reclamaciones</a
+                >
+                <a href="#offering" data-i18n="offering.grid.item4.title"
+                    >Auditoría Contratos</a
+                >
             </div>
         </div>
-        <p data-i18n="footer.copywrite">&copy; 2025 GRP Ingeniería. Todos los derechos reservados.</p>
+        <p data-i18n="footer.copywrite">
+            &copy; 2025 GRP Ingeniería. Todos los derechos reservados.
+        </p>
     </footer>
 </Layout>
 
@@ -563,4 +645,66 @@ const handleSubmit = async (event: SubmitEvent) => {
             }
         });
     });
+</script>
+
+<script is:inline>
+    // Función para verificar si un elemento está (al menos parcialmente) en el viewport
+    function isInViewport(elem) {
+        const distance = elem.getBoundingClientRect();
+        return (
+            distance.top <
+                (window.innerHeight || document.documentElement.clientHeight) &&
+            distance.bottom > 0
+        );
+    }
+
+    // Seleccionamos todos los <article> dentro de la sección offering
+    const offers = document.querySelectorAll(
+        "section#offering div.grid article"
+    );
+
+    const cycles = document.querySelectorAll(
+        "section#project-cycle div.grid article"
+    );
+
+    const filosophyBox = document.querySelector("section#team div.box");
+
+    const contactData = document.querySelectorAll(
+        "section#contact div.container div.info article"
+    );
+
+    const footerLogo = document.querySelector("footer div.grid div.col a img");
+
+    function checkArticles() {
+        offers.forEach((article) => {
+            if (isInViewport(article)) {
+                article.classList.add("flip-in-hor-bottom-dur1200ms");
+            }
+        });
+
+        cycles.forEach((article) => {
+            if (isInViewport(article)) {
+                article.classList.add("slide-in-left");
+            }
+        });
+
+        if (isInViewport(filosophyBox)) {
+            filosophyBox.classList.add("scale-in-center");
+        }
+
+        contactData.forEach((article) => {
+            if (isInViewport(article)) {
+                article.classList.add("flip-in-hor-bottom-dur800ms");
+            }
+        });
+
+        if (isInViewport(footerLogo)) {
+            footerLogo.classList.add("scale-in-hor-left");
+        }
+    }
+
+    // Ejecutar al cargar la página
+    window.addEventListener("load", checkArticles);
+    // Ejecutar en cada scroll
+    window.addEventListener("scroll", checkArticles);
 </script>

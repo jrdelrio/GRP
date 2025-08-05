@@ -1,10 +1,11 @@
 ---
 import translations from "../data/translations";
+import "../../styles/animations.css";
 ---
 
 <header>
     <a href="/" class="logo-link">
-        <img src="./logo/main-logo-blue.png" alt="Logo" class="logo" />
+        <img src="./logo/main-logo-blue.png" alt="Logo" class="logo scale-in-hor-left" />
     </a>
 
     <!-- Navbar desktop -->
@@ -73,7 +74,7 @@ import translations from "../data/translations";
 </header>
 
 <style lang="scss">
-    @use "../../styles.scss" as src;
+    @use "../../styles/styles.scss" as src;
 
     header {
         width: 100%;
