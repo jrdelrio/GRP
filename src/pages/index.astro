@@ -449,6 +449,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                             type="text"
                             name="name"
                             placeholder="Nombre completo"
+                            data-i18n-placeholder="contact.contactForm.name.placeholder"
                             required
                         />
                     </div>
@@ -461,6 +462,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                             name="email"
                             inputmode="email"
                             placeholder="ejemplo@empresa.com"
+                            data-i18n-placeholder="contact.contactForm.email.placeholder"
                             required
                         />
                     </div>
@@ -472,6 +474,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                             type="text"
                             placeholder="Nombre de la empresa"
                             name="company"
+                            data-i18n-placeholder="contact.contactForm.company.placeholder"
                         />
                     </div>
                     <div class="input-field">
@@ -490,6 +493,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                         type="text"
                         placeholder="Metro, Ferrocarril, Concesión, etc."
                         name="project"
+                        data-i18n-placeholder="contact.contactForm.project.placeholder"
                     />
                 </div>
                 <div class="input-field">
@@ -500,6 +504,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                         rows="5"
                         name="message"
                         placeholder="Describe brevemente tu proyecto y el tipo de asesoría que necesitas..."
+                        data-i18n-placeholder="contact.contactForm.message.placeholder"
                     ></textarea>
                 </div>
                 <button type="submit" data-i18n="contact.contactForm.submitButton">Enviar Consulta</button>
