@@ -418,6 +418,7 @@ section#contact {
         .info {
             article {
                 display: flex;
+                align-items: center;
                 background-color: $color-white;
                 margin-bottom: 25px;
                 padding: 24px;
@@ -431,6 +432,21 @@ section#contact {
                         color.adjust($color-bg-gray, $lightness: -10%);
                 }
 
+                & > img {
+                    width: auto;
+                    height: 40px;
+                    padding: 12px 15px 12px 0;
+
+                }
+
+                @include desktop {
+                    & > img {
+                        width: auto;
+                        height: 40px;
+                        padding: 12px 20px 12px 0;
+                    }
+                }
+
                 .data {
                     display: flex;
                     flex-direction: column;
@@ -441,7 +457,8 @@ section#contact {
                         color: $color-text;
                     }
 
-                    p, a {
+                    p,
+                    a {
                         margin: 0 0 6px 0;
                         color: $color-text;
                         text-decoration: none;
