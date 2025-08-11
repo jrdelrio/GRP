@@ -1,6 +1,6 @@
 ---
 import "../../styles/styles.scss";
-import "../../styles/animations.css"
+import "../../styles/animations.css";
 ---
 
 <!doctype html>
@@ -10,7 +10,59 @@ import "../../styles/animations.css"
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <meta name="generator" content={Astro.generator} />
-        <title>GRP Ingeniería</title>
+
+        <!-- SEO básico -->
+        <title>GRP Ingeniería - Expertos en gestión contractual</title>
+        <meta
+            name="description"
+            content="Asesorías técnicas estratégicas para optimizar proyectos, prevenir reclamaciones y gestionar arbitrajes, maximizando resultados y reduciendo riesgos."
+        />
+        <link rel="canonical" href="https://www.grpingenieria.cl" />
+
+        <!-- Open Graph (Facebook, LinkedIn, WhatsApp, etc.) -->
+        <meta
+            property="og:title"
+            content="GRP Ingeniería - Expertos en gestión contractual"
+        />
+        <meta
+            property="og:description"
+            content="Asesorías técnicas estratégicas para optimizar proyectos, prevenir reclamaciones y gestionar arbitrajes, maximizando resultados y reduciendo riesgos."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.grpingenieria.cl" />
+        <meta property="og:image" content="https://###.com" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="es_CL" />
+        <meta property="og:site_name" content="GRP Ingeniería" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="GRP Ingeniería - Expertos en gestión contractual"
+        />
+        <meta
+            name="twitter:description"
+            content="Asesorías técnicas estratégicas para optimizar proyectos, prevenir reclamaciones y gestionar arbitrajes, maximizando resultados y reduciendo riesgos."
+        />
+        <meta name="twitter:image" content="https://###.com" />
+
+        <!-- Extra para SEO y compatibilidad -->
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="GRP Ingeniería" />
+        <meta name="theme-color" content="#003366" />
+
+        <!-- Para WhatsApp/LinkedIn: usan OG tags, pero reforzamos con meta genéricos -->
+        <meta
+            itemprop="name"
+            content="GRP Ingeniería - Expertos en gestión contractual"
+        />
+        <meta
+            itemprop="description"
+            content="Asesorías técnicas estratégicas para optimizar proyectos, prevenir reclamaciones y gestionar arbitrajes, maximizando resultados y reduciendo riesgos."
+        />
+        <meta itemprop="image" content="https://###.com" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,6 +94,4 @@ import "../../styles/animations.css"
         font-weight: 250;
         font-style: normal;
     }
-
-    
 </style>
