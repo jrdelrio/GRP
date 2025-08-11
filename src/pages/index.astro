@@ -495,6 +495,7 @@ import Header from "../components/Header.astro";
                         >
                         <input
                             type="text"
+                            id="name"
                             name="name"
                             placeholder="Nombre completo"
                             data-i18n-placeholder="contact.contactForm.name.placeholder"
@@ -509,6 +510,7 @@ import Header from "../components/Header.astro";
                             >Correo Electrónico</label
                         >
                         <input
+                            id="email"
                             type="text"
                             name="email"
                             inputmode="email"
@@ -527,6 +529,7 @@ import Header from "../components/Header.astro";
                         >
                         <input
                             type="text"
+                            id="company"
                             placeholder="Nombre de la empresa"
                             name="company"
                             data-i18n-placeholder="contact.contactForm.company.placeholder"
@@ -540,6 +543,7 @@ import Header from "../components/Header.astro";
                         >
                         <input
                             type="text"
+                            id="phone"
                             inputmode="tel"
                             placeholder="+56 9 1234 5678"
                             name="phone"
@@ -554,6 +558,7 @@ import Header from "../components/Header.astro";
                     >
                     <input
                         type="text"
+                        id="project"
                         placeholder="Metro, Ferrocarril, Concesión, etc."
                         name="project"
                         data-i18n-placeholder="contact.contactForm.project.placeholder"
@@ -567,6 +572,7 @@ import Header from "../components/Header.astro";
                     >
                     <textarea
                         rows="5"
+                        id="message"
                         name="message"
                         placeholder="Describe brevemente tu proyecto y el tipo de asesoría que necesitas..."
                         data-i18n-placeholder="contact.contactForm.message.placeholder"
@@ -725,7 +731,7 @@ import Header from "../components/Header.astro";
             const form = event.target;
             const formData = new FormData(form);
             console.log(formData);
-            
+
             const response = await fetch("/api/contact-handler", {
                 method: "POST",
                 body: formData,
