@@ -59,7 +59,7 @@ header {
 }
 
 section#welcome {
-    background-image: url(./bg/machine-bg.jpg);
+    background-image: url("/bg/machine-bg.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -289,7 +289,6 @@ section#project-cycle {
 
             ul {
                 padding-inline-start: 16px;
-                // list-style-image: url('./icons/achievement.png');
                 list-style-type: none;
                 padding: 0;
 
@@ -307,7 +306,7 @@ section#project-cycle {
                         top: 2px;
                         width: 12px;
                         height: 12px;
-                        background-image: url("./icons/achievement.png");
+                        background-image: url("/icons/achievement.png");
                         background-size: contain;
                         background-repeat: no-repeat;
                         color: $color-text;
@@ -442,9 +441,10 @@ section#contact {
                         color: $color-text;
                     }
 
-                    p {
+                    p, a {
                         margin: 0 0 6px 0;
                         color: $color-text;
+                        text-decoration: none;
                         &:last-child {
                             margin-bottom: 0;
                             color: $color-text-gray;

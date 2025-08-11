@@ -366,8 +366,8 @@ const handleSubmit = async (event: SubmitEvent) => {
         <a
             href="#contact"
             data-i18n="project-cycle.buttonContact"
-            class="heartbeat">Consulta Gratis</a
-        >
+            class="heartbeat">Consulta 
+        </a>
         <p data-i18n="project-cycle.info">
             ¿Necesita asesoría específica para su proyecto? Contacte con
             nuestros especialistas.
@@ -421,9 +421,10 @@ const handleSubmit = async (event: SubmitEvent) => {
                         >
                             Correo Electrónico
                         </h4>
-                        <p data-i18n="contact.contactInfo.infoList.item1.data">
+                        <a href="mailto:contacto@grpingenieria.cl"
+                            data-i18n="contact.contactInfo.infoList.item1.data">
                             contacto@grpingenieria.cl
-                        </p>
+                        </a>
                         <p data-i18n="contact.contactInfo.infoList.item1.extra">
                             Respuesta en 24 horas
                         </p>
@@ -437,7 +438,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                         >
                             Teléfono
                         </h4>
-                        <p>+569 6444 1479</p>
+                        <a href="tel:+56964441479">+56964441479</a>
                         <p data-i18n="contact.contactInfo.infoList.item2.extra">
                             Lunes a Viernes 9:00 - 18:00
                         </p>
@@ -631,7 +632,10 @@ const handleSubmit = async (event: SubmitEvent) => {
 </Layout>
 
 <script is:inline>
+document.addEventListener("DOMContentLoaded", () => {
     const allLinks = document.querySelectorAll("a[href^='#']");
+    // console.log(allLinks);
+    
 
     allLinks.forEach((link) => {
         link.addEventListener("click", (ev) => {
@@ -645,10 +649,12 @@ const handleSubmit = async (event: SubmitEvent) => {
             }
         });
     });
+});
 </script>
 
+<!-- Activador de animaciones -->
 <script is:inline>
-    // Función para verificar si un elemento está (al menos parcialmente) en el viewport
+    
     function isInViewport(elem) {
         const distance = elem.getBoundingClientRect();
         return (
