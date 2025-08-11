@@ -548,6 +548,10 @@ section#contact {
             }
         }
     }
+
+    @include desktop {
+        justify-items: center;
+    }
 }
 
 footer {
