@@ -8,7 +8,7 @@ export const POST: APIRoute = async ({ request }) => {
         const formData = await request.formData();
         const name = formData.get("name")?.toString() || "";
         const email = formData.get("email")?.toString() || "";
-        const comany = formData.get("company")?.toString() || "";
+        const company = formData.get("company")?.toString() || "";
         const phone = formData.get("phone")?.toString() || "";
         const projectType = formData.get("project")?.toString() || "";
         const message = formData.get("message")?.toString() || "";
@@ -28,7 +28,7 @@ export const POST: APIRoute = async ({ request }) => {
             <p>Acabas de recibir un nuevo mensaje de contacto a través del formulario web con la siguiente información:</p>
             <p><strong>Nombre:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
-             <p><strong>Compañia:</strong> ${comany}</p>
+             <p><strong>Compañia:</strong> ${company}</p>
              <p><strong>Telefono:</strong> ${phone}</p>
              <p><strong>Tipo de Proyecto:</strong> ${projectType}</p>
              <p><strong>Mensaje:</strong> ${message}</p>
