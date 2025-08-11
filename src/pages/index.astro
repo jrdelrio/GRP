@@ -1,65 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-
-// const handleSubmit = async (event: SubmitEvent) => {
-//     event.preventDefault();
-
-//     const form = event.target as HTMLFormElement;
-//     const name = (
-//         form.elements.namedItem("name") as HTMLInputElement
-//     ).value.trim();
-//     const email = (
-//         form.elements.namedItem("email") as HTMLInputElement
-//     ).value.trim();
-
-//     // Validar campos requeridos
-//     if (!name || !email) {
-//         alert(
-//             "Por favor, completa los campos obligatorios: Nombre Completo y Correo Electrónico."
-//         );
-//         return;
-//     }
-
-//     // Recolectar datos
-//     const data = {
-//         name,
-//         email,
-//         company: (
-//             form.elements.namedItem("company") as HTMLInputElement
-//         ).value.trim(),
-//         phone: (
-//             form.elements.namedItem("phone") as HTMLInputElement
-//         ).value.trim(),
-//         project: (
-//             form.elements.namedItem("project") as HTMLInputElement
-//         ).value.trim(),
-//         message: (
-//             form.elements.namedItem("message") as HTMLInputElement
-//         ).value.trim(),
-//     };
-
-//     try {
-//         const response = await fetch("/api/contact-handler", {
-//             method: "POST",
-//             headers: { "Content-Type": "application/json" },
-//             body: JSON.stringify(data),
-//         });
-
-//         if (response.ok) {
-//             alert("Consulta enviada correctamente. ¡Gracias!");
-//             form.reset();
-//         } else {
-//             alert(
-//                 "Hubo un error al enviar la consulta. Por favor, inténtalo más tarde."
-//             );
-//         }
-//     } catch (error) {
-//         alert(
-//             "Error de red. Por favor, comprobar conexión e intentar nuevamente."
-//         );
-//     }
-// };
+import "../../styles/spinner.scss";
 ---
 
 <Layout>
@@ -580,6 +522,7 @@ import Header from "../components/Header.astro";
                 </div>
                 <button
                     type="submit"
+                    id="submit-btn"
                     data-i18n="contact.contactForm.submitButton"
                     >Enviar Consulta</button
                 >
@@ -729,21 +672,33 @@ import Header from "../components/Header.astro";
         .addEventListener("submit", async (event) => {
             event.preventDefault();
             const form = event.target;
-            const formData = new FormData(form);
-            console.log(formData);
+            const btn = document.getElementById("submit-btn");
+            const originalText = btn.textContent;
 
-            const response = await fetch("/api/contact-handler", {
-                method: "POST",
-                body: formData,
-            });
+            btn.disabled = true;
+            btn.innerHTML = `<span class="spinner"></span> Enviando...`;
 
-            const result = await response.json();
+            try {
+                const formData = new FormData(form);
+                const response = await fetch("/api/contact-handler", {
+                    method: "POST",
+                    body: formData,
+                });
 
-            if (result.success) {
-                alert("Consulta enviada con éxito. ¡Muchas Gracias!");
-                form.reset();
-            } else {
-                alert("Hubo un error: " + (result.error || "Desconocido"));
+                const result = await response.json();
+
+                if (result.success) {
+                    alert("Consulta enviada con éxito. ¡Muchas Gracias!");
+                    form.reset();
+                } else {
+                    alert("Hubo un error: " + (result.error || "Desconocido"));
+                }
+            } catch (error) {
+                console.error(error);
+                alert("Error de conexión");
             }
+
+            btn.disabled = false;
+            btn.textContent = originalText;
         });
 </script>
