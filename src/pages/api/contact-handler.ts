@@ -22,15 +22,17 @@ export const POST: APIRoute = async ({ request }) => {
 
         await resend.emails.send({
             from: "Chilisites Services <contacto@chilisites.com>",
-              to: "contacto@grpingenieria.cl",
-            // to: "jrdelriodom@gmail.com",
+            to: "contacto@grpingenieria.cl",
             subject: "Tienes un nuevo Contacto Web",
-            html: `<p><strong>Nombre:</strong> ${name}</p>
+            html: `
+            <p>Acabas de recibir un nuevo mensaje de contacto a través del formulario web con la siguiente información:</p>
+            <p><strong>Nombre:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
              <p><strong>Compañia:</strong> ${comany}</p>
              <p><strong>Telefono:</strong> ${phone}</p>
              <p><strong>Tipo de Proyecto:</strong> ${projectType}</p>
-             <p><strong>Mensaje:</strong> ${message}</p>`,
+             <p><strong>Mensaje:</strong> ${message}</p>
+             `,
         });
 
         return new Response(JSON.stringify({ success: true }), { status: 200 });
