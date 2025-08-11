@@ -2,64 +2,64 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 
-const handleSubmit = async (event: SubmitEvent) => {
-    event.preventDefault();
+// const handleSubmit = async (event: SubmitEvent) => {
+//     event.preventDefault();
 
-    const form = event.target as HTMLFormElement;
-    const name = (
-        form.elements.namedItem("name") as HTMLInputElement
-    ).value.trim();
-    const email = (
-        form.elements.namedItem("email") as HTMLInputElement
-    ).value.trim();
+//     const form = event.target as HTMLFormElement;
+//     const name = (
+//         form.elements.namedItem("name") as HTMLInputElement
+//     ).value.trim();
+//     const email = (
+//         form.elements.namedItem("email") as HTMLInputElement
+//     ).value.trim();
 
-    // Validar campos requeridos
-    if (!name || !email) {
-        alert(
-            "Por favor, completa los campos obligatorios: Nombre Completo y Correo Electrónico."
-        );
-        return;
-    }
+//     // Validar campos requeridos
+//     if (!name || !email) {
+//         alert(
+//             "Por favor, completa los campos obligatorios: Nombre Completo y Correo Electrónico."
+//         );
+//         return;
+//     }
 
-    // Recolectar datos
-    const data = {
-        name,
-        email,
-        company: (
-            form.elements.namedItem("company") as HTMLInputElement
-        ).value.trim(),
-        phone: (
-            form.elements.namedItem("phone") as HTMLInputElement
-        ).value.trim(),
-        project: (
-            form.elements.namedItem("project") as HTMLInputElement
-        ).value.trim(),
-        message: (
-            form.elements.namedItem("message") as HTMLInputElement
-        ).value.trim(),
-    };
+//     // Recolectar datos
+//     const data = {
+//         name,
+//         email,
+//         company: (
+//             form.elements.namedItem("company") as HTMLInputElement
+//         ).value.trim(),
+//         phone: (
+//             form.elements.namedItem("phone") as HTMLInputElement
+//         ).value.trim(),
+//         project: (
+//             form.elements.namedItem("project") as HTMLInputElement
+//         ).value.trim(),
+//         message: (
+//             form.elements.namedItem("message") as HTMLInputElement
+//         ).value.trim(),
+//     };
 
-    try {
-        const response = await fetch("/api/contact-handler", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data),
-        });
+//     try {
+//         const response = await fetch("/api/contact-handler", {
+//             method: "POST",
+//             headers: { "Content-Type": "application/json" },
+//             body: JSON.stringify(data),
+//         });
 
-        if (response.ok) {
-            alert("Consulta enviada correctamente. ¡Gracias!");
-            form.reset();
-        } else {
-            alert(
-                "Hubo un error al enviar la consulta. Por favor, inténtalo más tarde."
-            );
-        }
-    } catch (error) {
-        alert(
-            "Error de red. Por favor, comprobar conexión e intentar nuevamente."
-        );
-    }
-};
+//         if (response.ok) {
+//             alert("Consulta enviada correctamente. ¡Gracias!");
+//             form.reset();
+//         } else {
+//             alert(
+//                 "Hubo un error al enviar la consulta. Por favor, inténtalo más tarde."
+//             );
+//         }
+//     } catch (error) {
+//         alert(
+//             "Error de red. Por favor, comprobar conexión e intentar nuevamente."
+//         );
+//     }
+// };
 ---
 
 <Layout>
@@ -79,7 +79,8 @@ const handleSubmit = async (event: SubmitEvent) => {
             <a
                 href="#offering"
                 data-i18n="welcome.buttonServices"
-                class="flip-in-hor-bottom-d600ms with-arrow">Conocer Servicios <span>→</span></a
+                class="flip-in-hor-bottom-d600ms with-arrow"
+                >Conocer Servicios <span>→</span></a
             >
             <a
                 href="#contact"
@@ -366,7 +367,8 @@ const handleSubmit = async (event: SubmitEvent) => {
         <a
             href="#contact"
             data-i18n="project-cycle.buttonContact"
-            class="heartbeat">Consulta 
+            class="heartbeat"
+            >Consulta
         </a>
         <p data-i18n="project-cycle.info">
             ¿Necesita asesoría específica para su proyecto? Contacte con
@@ -421,8 +423,10 @@ const handleSubmit = async (event: SubmitEvent) => {
                         >
                             Correo Electrónico
                         </h4>
-                        <a href="mailto:contacto@grpingenieria.cl"
-                            data-i18n="contact.contactInfo.infoList.item1.data">
+                        <a
+                            href="mailto:contacto@grpingenieria.cl"
+                            data-i18n="contact.contactInfo.infoList.item1.data"
+                        >
                             contacto@grpingenieria.cl
                         </a>
                         <p data-i18n="contact.contactInfo.infoList.item1.extra">
@@ -477,7 +481,7 @@ const handleSubmit = async (event: SubmitEvent) => {
                 </article>
             </div>
 
-            <form action="" class="form">
+            <form class="form" id="contact-form">
                 <h3 data-i18n="contact.contactForm.title">
                     Solicitar Consulta
                 </h3>
@@ -562,8 +566,6 @@ const handleSubmit = async (event: SubmitEvent) => {
                         >Mensaje</label
                     >
                     <textarea
-                        name=""
-                        id=""
                         rows="5"
                         name="message"
                         placeholder="Describe brevemente tu proyecto y el tipo de asesoría que necesitas..."
@@ -631,30 +633,29 @@ const handleSubmit = async (event: SubmitEvent) => {
     </footer>
 </Layout>
 
+<!-- links dentro de la pagina con smooth behavior -->
 <script is:inline>
-document.addEventListener("DOMContentLoaded", () => {
-    const allLinks = document.querySelectorAll("a[href^='#']");
-    // console.log(allLinks);
-    
+    document.addEventListener("DOMContentLoaded", () => {
+        const allLinks = document.querySelectorAll("a[href^='#']");
+        // console.log(allLinks);
 
-    allLinks.forEach((link) => {
-        link.addEventListener("click", (ev) => {
-            const targetId = link.getAttribute("href")?.substring(1);
-            const targetEl = document.getElementById(targetId);
+        allLinks.forEach((link) => {
+            link.addEventListener("click", (ev) => {
+                const targetId = link.getAttribute("href")?.substring(1);
+                const targetEl = document.getElementById(targetId);
 
-            if (targetEl) {
-                ev.preventDefault();
-                targetEl.scrollIntoView({ behavior: "smooth" });
-                closeMenu();
-            }
+                if (targetEl) {
+                    ev.preventDefault();
+                    targetEl.scrollIntoView({ behavior: "smooth" });
+                    closeMenu();
+                }
+            });
         });
     });
-});
 </script>
 
 <!-- Activador de animaciones -->
 <script is:inline>
-    
     function isInViewport(elem) {
         const distance = elem.getBoundingClientRect();
         return (
@@ -713,4 +714,30 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("load", checkArticles);
     // Ejecutar en cada scroll
     window.addEventListener("scroll", checkArticles);
+</script>
+
+<!-- form handler -->
+<script is:inline>
+    document
+        .getElementById("contact-form")
+        .addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            console.log(formData);
+            
+            const response = await fetch("/api/contact-handler", {
+                method: "POST",
+                body: formData,
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert("Consulta enviada con éxito. ¡Muchas Gracias!");
+                form.reset();
+            } else {
+                alert("Hubo un error: " + (result.error || "Desconocido"));
+            }
+        });
 </script>
