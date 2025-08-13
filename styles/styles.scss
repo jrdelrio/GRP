@@ -160,6 +160,9 @@ section#offering {
     .offers {
         padding-top: 20px;
         .offer {
+            p {
+                text-align: justify
+            }
             &:last-child {
                 margin-top: 35px;
             }

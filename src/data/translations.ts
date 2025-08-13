@@ -14,6 +14,7 @@ const translations = {
             buttonServices: "Conocer Servicios →",
             buttonContact: "Solicitar Consulta",
         },
+
         offering: {
             title: "Qué Ofrecemos",
             subtitle:
@@ -64,6 +65,7 @@ const translations = {
                 },
             },
         },
+
         "project-cycle": {
             title: "Acompañamiento experto en Todo el Ciclo del Proyecto",
             subtitle:
@@ -98,13 +100,12 @@ const translations = {
                     subtitle:
                         "Gestión proactiva durante la ejecución del proyecto para asegurar cumplimiento de objetivos.",
                     list: {
-                        item1: "Gestión integral de riesgos y mitigación",
-                        item2: "Estudio técnico del contrato",
-                        item3: "Gestión en las comunicaciones de obra",
-                        item4: "Auditoría forense de proyectos",
-                        item5: "Preparación y gestión de solicitudes de mayores costo y plazo adicional",
-                        item6: "Estudios de pérdida de productividad",
-                        item7: "Acompañamiento en las etapas de discusión y/o negociación",
+                        item1: "Gerenciamiento del proyecto para el mandante, OPM (Owner Project Management)",
+                        item2: "Conformación equipo de obra y apoyo en la seleccion y contratación de personal",
+                        item3: "Apoyo técnico en la definición y características de los equipos",
+                        item4: "Planificación y metodología de control para disponer de una obra eficiente",
+                        item5: "Mejoras en el ciclo de construcción y productividad",
+                        item6: "Manejo comunicaciones de obra",
                     },
                 },
                 card4: {
@@ -112,13 +113,11 @@ const translations = {
                     subtitle:
                         "Gestión proactiva durante la ejecución del proyecto para asegurar cumplimiento de objetivos.",
                     list: {
-                        item1: "Gestión integral de riesgos y mitigación",
-                        item2: "Estudio técnico del contrato",
-                        item3: "Gestión en las comunicaciones de obra",
-                        item4: "Auditoría forense de proyectos",
-                        item5: "Preparación y gestión de solicitudes de mayores costos y plazo adicional",
-                        item6: "Estudios de pérdida de productividad",
-                        item7: "Acompañamiento en las etapas de discusión y/o negociación",
+                        item1: "Análisis de brechas en el estudio con una mirada contractual que permita evaluar los riesgos y determinar mitigaciones",
+                        item2: "Evaluación y programa impactado, a medición de pérdida de productividad mediante metodología AACE y SCL",
+                        item3: "Generación de documentación para respaldo de reclamaciones con apoyo al servicio de abogado experto en el tema",
+                        item4: "Revisión de posibles reclamaciones de terceras partes respecto al presupuesto y recursos",
+                        item5: "Informes periciales y de parte",
                     },
                 },
             },
@@ -313,7 +312,6 @@ const translations = {
                         item4: "Forensic project audit",
                         item5: "Preparation and management of requests for additional costs and time",
                         item6: "Productivity loss studies",
-                        item7: "Support in discussion and/or negotiation stages",
                     },
                 },
                 card4: {
@@ -326,8 +324,6 @@ const translations = {
                         item3: "Management of on-site communications",
                         item4: "Forensic project audit",
                         item5: "Preparation and management of requests for additional costs and time",
-                        item6: "Productivity loss studies",
-                        item7: "Support in discussion and/or negotiation stages",
                     },
                 },
             },
