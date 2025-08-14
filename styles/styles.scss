@@ -1,9 +1,5 @@
 @use "sass:color";
 
-* {
-    border: 1px solid red;
-    box-sizing: border-box;
-}
 
 // variables
 $color-bg: #fafafa;
@@ -565,7 +561,6 @@ section#contact {
 footer {
     background-color: $color-blue;
     color: $color-white;
-    width: 100vw;
 
     .grid {
         display: flex;
