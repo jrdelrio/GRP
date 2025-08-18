@@ -9,6 +9,34 @@ import "../../styles/spinner.scss";
 
     <section id="welcome">
         <div class="overlay"></div>
+        <div class="bg-slides">
+            <div
+                class="bg-slide"
+                style="background-image: url('/bg/machine-bg.jpg');"
+            >
+            </div>
+            <div
+                class="bg-slide"
+                style="background-image: url('/bg/control-center.jpg');"
+            >
+            </div>
+            <div
+                class="bg-slide"
+                style="background-image: url('/bg/excavator-action.jpg');"
+            >
+            </div>
+            <div
+                class="bg-slide"
+                style="background-image: url('/bg/technology.jpg');"
+            >
+            </div>
+            <div
+                class="bg-slide"
+                style="background-image: url('/bg/train.jpg');"
+            >
+            </div>
+        </div>
+
         <h2 class="section-title lora" data-i18n="welcome.title">
             GRP Ingeniería
         </h2>
@@ -280,21 +308,26 @@ import "../../styles/spinner.scss";
                 </p>
                 <ul>
                     <li data-i18n="project-cycle.grid.card4.list.item1">
-                        Análisis de brechas en el estudio con una mirada contractual que permita evaluar los riesgos y determinar mitigaciones
+                        Análisis de brechas en el estudio con una mirada
+                        contractual que permita evaluar los riesgos y determinar
+                        mitigaciones
                     </li>
                     <li data-i18n="project-cycle.grid.card4.list.item2">
-                        Evaluación y programa impactado, a medición de pérdida de productividad mediante metodología AACE y SCL
+                        Evaluación y programa impactado, a medición de pérdida
+                        de productividad mediante metodología AACE y SCL
                     </li>
                     <li data-i18n="project-cycle.grid.card4.list.item3">
-                        Generación de documentación para respaldo de reclamaciones con apoyo al servicio de abogado experto en el tema
+                        Generación de documentación para respaldo de
+                        reclamaciones con apoyo al servicio de abogado experto
+                        en el tema
                     </li>
                     <li data-i18n="project-cycle.grid.card4.list.item4">
-                        Revisión de posibles reclamaciones de terceras partes respecto al presupuesto y recursos
+                        Revisión de posibles reclamaciones de terceras partes
+                        respecto al presupuesto y recursos
                     </li>
                     <li data-i18n="project-cycle.grid.card4.list.item5">
                         Informes periciales y de parte
                     </li>
-                    
                 </ul>
             </article>
         </div>
@@ -333,9 +366,7 @@ import "../../styles/spinner.scss";
     </section>
 
     <section id="contact">
-        <h1 class="text-black lora" data-i18n="contact.title">
-            Contacto
-        </h1>
+        <h1 class="text-black lora" data-i18n="contact.title">Contacto</h1>
         <p class="section-subtitle" data-i18n="contact.subtitle1">
             ¿Necesitas asesoría especializada para tu proyecto de
             infraestructura?
@@ -563,132 +594,136 @@ import "../../styles/spinner.scss";
                 <a href="#contact" data-i18n="offering.grid.item3.title"
                     >Contacto</a
                 >
-
             </div>
         </div>
         <p data-i18n="footer.copywrite">
             &copy; 2025 GRP Ingeniería. Todos los derechos reservados.
         </p>
     </footer>
-</Layout>
 
-<!-- links dentro de la pagina con smooth behavior -->
-<script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-        const allLinks = document.querySelectorAll("a[href^='#']");
-        // console.log(allLinks);
+    <!-- links dentro de la pagina con smooth behavior -->
+    <script is:inline>
+        document.addEventListener("DOMContentLoaded", () => {
+            const allLinks = document.querySelectorAll("a[href^='#']");
+            // console.log(allLinks);
 
-        allLinks.forEach((link) => {
-            link.addEventListener("click", (ev) => {
-                const targetId = link.getAttribute("href")?.substring(1);
-                const targetEl = document.getElementById(targetId);
+            allLinks.forEach((link) => {
+                link.addEventListener("click", (ev) => {
+                    const targetId = link.getAttribute("href")?.substring(1);
+                    const targetEl = document.getElementById(targetId);
 
-                if (targetEl) {
-                    ev.preventDefault();
-                    targetEl.scrollIntoView({ behavior: "smooth" });
-                    closeMenu();
-                }
+                    if (targetEl) {
+                        ev.preventDefault();
+                        targetEl.scrollIntoView({ behavior: "smooth" });
+                        closeMenu();
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 
-<!-- Activador de animaciones -->
-<script is:inline>
-    function isInViewport(elem) {
-        const distance = elem.getBoundingClientRect();
-        return (
-            distance.top <
-                (window.innerHeight || document.documentElement.clientHeight) &&
-            distance.bottom > 0
+    <!-- Activador de animaciones -->
+    <script is:inline>
+        function isInViewport(elem) {
+            const distance = elem.getBoundingClientRect();
+            return (
+                distance.top <
+                    (window.innerHeight ||
+                        document.documentElement.clientHeight) &&
+                distance.bottom > 0
+            );
+        }
+
+        // Seleccionamos todos los <article> dentro de la sección offering
+        const offers = document.querySelectorAll(
+            "section#offering div.grid article"
         );
-    }
 
-    // Seleccionamos todos los <article> dentro de la sección offering
-    const offers = document.querySelectorAll(
-        "section#offering div.grid article"
-    );
+        const cycles = document.querySelectorAll(
+            "section#project-cycle div.grid article"
+        );
 
-    const cycles = document.querySelectorAll(
-        "section#project-cycle div.grid article"
-    );
+        const filosophyBox = document.querySelector("section#team div.box");
 
-    const filosophyBox = document.querySelector("section#team div.box");
+        const contactData = document.querySelectorAll(
+            "section#contact div.container div.info article"
+        );
 
-    const contactData = document.querySelectorAll(
-        "section#contact div.container div.info article"
-    );
+        const footerLogo = document.querySelector(
+            "footer div.grid div.col a img"
+        );
 
-    const footerLogo = document.querySelector("footer div.grid div.col a img");
-
-    function checkArticles() {
-        offers.forEach((article) => {
-            if (isInViewport(article)) {
-                article.classList.add("flip-in-hor-bottom-dur1200ms");
-            }
-        });
-
-        cycles.forEach((article) => {
-            if (isInViewport(article)) {
-                article.classList.add("slide-in-left");
-            }
-        });
-
-        if (isInViewport(filosophyBox)) {
-            filosophyBox.classList.add("scale-in-center");
-        }
-
-        contactData.forEach((article) => {
-            if (isInViewport(article)) {
-                article.classList.add("flip-in-hor-bottom-dur800ms");
-            }
-        });
-
-        if (isInViewport(footerLogo)) {
-            footerLogo.classList.add("scale-in-hor-left");
-        }
-    }
-
-    // Ejecutar al cargar la página
-    window.addEventListener("load", checkArticles);
-    // Ejecutar en cada scroll
-    window.addEventListener("scroll", checkArticles);
-</script>
-
-<!-- form handler -->
-<script is:inline>
-    document
-        .getElementById("contact-form")
-        .addEventListener("submit", async (event) => {
-            event.preventDefault();
-            const form = event.target;
-            const btn = document.getElementById("submit-btn");
-            const originalText = btn.textContent;
-
-            btn.disabled = true;
-            btn.innerHTML = `<span class="spinner"></span> Enviando...`;
-
-            try {
-                const formData = new FormData(form);
-                const response = await fetch("/api/contact-handler", {
-                    method: "POST",
-                    body: formData,
-                });
-
-                const result = await response.json();
-
-                if (result.success) {
-                    alert("Consulta enviada con éxito. ¡Muchas Gracias!");
-                    form.reset();
-                } else {
-                    alert("Hubo un error: " + (result.error || "Desconocido"));
+        function checkArticles() {
+            offers.forEach((article) => {
+                if (isInViewport(article)) {
+                    article.classList.add("flip-in-hor-bottom-dur1200ms");
                 }
-            } catch (error) {
-                console.error(error);
-                alert("Error de conexión");
+            });
+
+            cycles.forEach((article) => {
+                if (isInViewport(article)) {
+                    article.classList.add("slide-in-left");
+                }
+            });
+
+            if (isInViewport(filosophyBox)) {
+                filosophyBox.classList.add("scale-in-center");
             }
 
-            btn.disabled = false;
-            btn.textContent = originalText;
-        });
-</script>
+            contactData.forEach((article) => {
+                if (isInViewport(article)) {
+                    article.classList.add("flip-in-hor-bottom-dur800ms");
+                }
+            });
+
+            if (isInViewport(footerLogo)) {
+                footerLogo.classList.add("scale-in-hor-left");
+            }
+        }
+
+        // Ejecutar al cargar la página
+        window.addEventListener("load", checkArticles);
+        // Ejecutar en cada scroll
+        window.addEventListener("scroll", checkArticles);
+    </script>
+
+    <!-- form handler -->
+    <script is:inline>
+        document
+            .getElementById("contact-form")
+            .addEventListener("submit", async (event) => {
+                event.preventDefault();
+                const form = event.target;
+                const btn = document.getElementById("submit-btn");
+                const originalText = btn.textContent;
+
+                btn.disabled = true;
+                btn.innerHTML = `<span class="spinner"></span> Enviando...`;
+
+                try {
+                    const formData = new FormData(form);
+                    const response = await fetch("/api/contact-handler", {
+                        method: "POST",
+                        body: formData,
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        alert("Consulta enviada con éxito. ¡Muchas Gracias!");
+                        form.reset();
+                    } else {
+                        alert(
+                            "Hubo un error: " + (result.error || "Desconocido")
+                        );
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert("Error de conexión");
+                }
+
+                btn.disabled = false;
+                btn.textContent = originalText;
+            });
+    </script>
+</Layout>

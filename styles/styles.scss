@@ -1,6 +1,5 @@
 @use "sass:color";
 
-
 // variables
 $color-bg: #fafafa;
 $color-text: #1f232e;
@@ -30,7 +29,6 @@ section {
 
 h1 {
     font-size: 2rem;
-
 }
 
 .section-title {
@@ -65,13 +63,14 @@ header {
 }
 
 section#welcome {
-    background-image: url("/bg/machine-bg.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    // background-image: url("/bg/machine-bg.jpg");
+    // background-position: center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
     color: white;
     padding: 110px 40px;
     position: relative;
+    overflow: hidden;
 
     .overlay {
         position: absolute;
@@ -80,17 +79,57 @@ section#welcome {
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    .bg-slides {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+
+        .bg-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0;
+            animation: fadeCarousel 30s infinite;
+            animation-timing-function: ease-in-out;
+
+            &:nth-child(1) {
+                animation-delay: 0s;
+            }
+            &:nth-child(2) {
+                animation-delay: 6s;
+            }
+            &:nth-child(3) {
+                animation-delay: 12s;
+            }
+            &:nth-child(4) {
+                animation-delay: 18s;
+            }
+            &:nth-child(5) {
+                animation-delay: 24s;
+            }
+        }
     }
 
     h2.section-title {
         position: relative;
-        z-index: 2;
+        z-index: 20;
     }
 
     p.section-subtitle {
         margin: 0;
-        z-index: 2;
+        z-index: 20;
         position: relative;
         max-width: 700px;
         justify-self: center;
@@ -104,6 +143,8 @@ section#welcome {
         gap: 14px;
         width: 100%;
         align-items: center;
+        position: relative;
+        z-index: 20;
 
         a {
             color: white;
@@ -157,12 +198,30 @@ section#welcome {
     }
 }
 
+@keyframes fadeCarousel {
+    0% {
+        opacity: 0;
+    }
+    3.33% {
+        opacity: 1;
+    } // Fade in 1s (5% of 20s = 1s)
+    20% {
+        opacity: 1;
+    } // Stay visible 3s
+    23.33% {
+        opacity: 0;
+    } // Fade out 1s
+    100% {
+        opacity: 0;
+    }
+}
+
 section#offering {
     .offers {
         padding-top: 20px;
         .offer {
             p {
-                text-align: justify
+                text-align: justify;
             }
             &:last-child {
                 margin-top: 35px;
