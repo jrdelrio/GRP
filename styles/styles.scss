@@ -63,10 +63,6 @@ header {
 }
 
 section#welcome {
-    // background-image: url("/bg/machine-bg.jpg");
-    // background-position: center;
-    // background-size: cover;
-    // background-repeat: no-repeat;
     color: white;
     padding: 110px 40px;
     position: relative;
@@ -672,7 +668,7 @@ footer {
         }
     }
 
-    & > p {
+    & > p:first-of-type {
         justify-self: center;
         margin: 0;
         padding: 20px 0;
@@ -700,6 +696,24 @@ footer {
                 width: min(90vw, 1050px);
                 left: -55%;
             }
+        }
+    }
+
+    & > p:last-of-type {
+        margin: 0;
+        padding: 0px 0px 20px 0px;
+        text-align: center;
+        font-weight: 200;
+        max-width: 400px;
+
+        @include desktop {
+            max-width: 500px;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: inherit; // Mantiene el color padre (blanco)
         }
     }
 }
